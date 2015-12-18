@@ -19,6 +19,12 @@
   top: 20px
   position: absolute
 
+.header-img--menu-logo
+  position: absolute
+  top: 20px
+  left: 20px
+  width: 40px
+
 .title-format
   padding: 2% 0 3% 0
   text-align: -webkit-center
@@ -133,10 +139,10 @@ form input
   
 .menu-layout
   left: -100%
-  height: 100%
+  height: -webkit-calc(100% - 60px)
   width: 100%
   position: absolute
-  top: 0
+  top: 60px
   background: linear-gradient(to right, $blue_gradient_left, $blue_gradient_right)
   transition-property: left
   transition-duration: 0.5s

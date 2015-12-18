@@ -1,31 +1,56 @@
 angular
-    .module('routes', ['ngRoute'])
-    .config(function($routeProvider) {
-        $routeProvider.when('/',{
-            templateUrl: "templates/Main.html",
-            controller: 'MainCtrl',
-            controllerAs: 'main'
+    .module('routes', ['ui.router'])
+    .config(function($stateProvider, $urlRouterProvider) {
+        var currentTemplate
+            , templates = {
+            selectpet: 'templates/SelectPet.html'
+        };
+        $stateProvider.state('start',{
+            url:'/',
+            templateUrl: "templates/Start.html",
+            controller: 'StartCtrl'
+
         });
-        $routeProvider.when('/login',{
+        $stateProvider.state('/login',{
             templateUrl: "templates/Login.html",
-            controller: 'LoginCtrl',
-            controllerAs: 'login'
+            controller: 'LoginCtrl'
         });
-        $routeProvider.when('/signup',{
+        $stateProvider.state('/signup',{
             templateUrl: "templates/Signup.html",
-            controller: 'SignupCtrl',
-            controllerAs: 'signup'
+            controller: 'SignupCtrl'
         });
-        $routeProvider.when('/addpet',{
-            templateUrl: "templates/AddPet.html",
-            controller: 'AddPetCtrl',
-            controllerAs: 'addpet'
+        $stateProvider.state('main',{
+            url:'/main',
+            templateUrl: "templates/Main.html",
+            controller: 'MainCtrl'
         });
-        $routeProvider.when('/selectpet',{
-            templateUrl: "templates/SelectPet.html",
-            controller: 'SelectPetCtrl',
-            controllerAs: 'selectpet'
+        $stateProvider.state('main.welcome',{
+            url: '/welcome',
+            views: {
+                "main": {
+                    templateUrl: "templates/Welcome.html"
+                }
+            }
         });
-        $routeProvider.otherwise('/');
+        $stateProvider.state('main.addpet',{
+            url: '/addpet',
+            views: {
+                "main": {
+                    templateUrl: "templates/AddPet.html"
+                }
+            }
+        });
+        $stateProvider.state('main.selectpet',{
+            url: '/selectpet',
+            views: {
+                "main": {
+                    templateUrl: "templates/SelectPet.html"
+                }
+            }
+        });
+
+
+
+        $urlRouterProvider.otherwise('/');
 });
 

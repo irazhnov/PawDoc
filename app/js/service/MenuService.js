@@ -5,19 +5,22 @@ angular
             , menuModel = {
                 isOpen:false,
                 items: [
-                {title:'My Account'},
-                {title:'My Pets'},
-                {title:'My Cases'},
-                {title:'Make Appoinment'},
-                {title:'Call Office'},
-                {title:'Get Alerts'},
-                {title:'Order Food/RX'},
-                {title:'Settings'},
-                {title:'Logout'}
+                {title:'My Account', url:'main/welcome'},
+                {title:'My Pets', url:'main/selectpet' },
+                {title:'My Cases', url:'main/selectpet'},
+                {title:'Make Appoinment', url:''},
+                {title:'Call Office', url:''},
+                {title:'Get Alerts', url:''},
+                {title:'Order Food/RX', url:''},
+                {title:'Settings', url:''},
+                {title:'Logout', url:''}
         ]};
         return {
             getModel: function () {
                 return menuModel;
-            }
+            },
+            toggleMenu: function () {
+                menuModel.isOpen = !menuModel.isOpen;
+            },
         }
     }]);
