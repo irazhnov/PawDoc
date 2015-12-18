@@ -1,0 +1,10 @@
+<div class="menu-layout" ng-class="{menuOpened: model.isOpen}">
+    <div class="menu-layout--header">
+        <img class="header-img" src="images/header_logo.png">
+    </div>
+    <div ng-repeat="item in model.items">
+        <div class="menu-layout--item">
+            <span class="menu-item">{{item.title}}</span>
+        </div>
+    </div>
+</div>

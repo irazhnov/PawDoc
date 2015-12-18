@@ -1,0 +1,32 @@
+{
+  "name": "pawdoc",
+  "version": "0.0.1",
+  "description": "Pet clinic cordova angular app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "angular-touch": "^1.4.8",
+    "browser-sync": "^2.10.0",
+    "fastclick": "^1.0.6",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-notify-growl": "^1.0.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-shell": "^0.5.1",
+    "hint": "^2.0.0",
+    "http": "0.0.0",
+    "jshint-stylish": "^2.1.0",
+    "run-sequence": "^1.1.5"
+  }
+}
