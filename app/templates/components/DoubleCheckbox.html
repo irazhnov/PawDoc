@@ -1,0 +1,14 @@
+<div class="spacer">
+    <span>{{model.label}}</span>
+    <div class="layout-inline">
+        <div class="spacer"></div>
+        <div ng-click="model.selected = true">
+            <span ng-class="{circleselected:model.selected}" class="circle" ></span>
+            <span ng-click="toggleCheckBox()">{{model.yes}}</span>
+        </div>
+        <div ng-click="model.selected = false">
+            <span ng-class="{circleselected:!model.selected}" class="circle" ></span>
+            <span  ng-click="toggleCheckBox()">{{model.no}}</span>
+        </div>
+    </div>
+</div>

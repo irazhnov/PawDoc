@@ -1,0 +1,36 @@
+<div class="title-layout">
+    <span class="service-txt txt-normal-size">What is wrong with Pet?</span>
+    <form class="layout--centered layout--left">
+        <label>
+            <span class="txt-small-size">Problem</span>
+            <input class="toll-input" placeholder="Enter details">
+        </label>
+        <label>
+            <span class="txt-small-size">Location:</span>
+            <input class="toll-input" placeholder="Enter area problem is located">
+        </label>
+        <label>
+            <span class="txt-small-size">How long has your pet had this problem?</span>
+            <select class="toll-input " ng-model="comboModel.sick_period">
+                <option ng-selected="true">Select from drop down menu</option>
+                <option ng-repeat="item in comboModel">{{item.title}}</option>
+            </select>
+        </label>
+            <span class="txt-small-size">Any symptoms?</span>
+            <span class="txt-small-size title-format txt-color-light-gray service-txt--login">Select all that apply.</span>
+
+        <double-checkbox class="combo-scale" ng-model="cbAppearence"></double-checkbox>
+        <double-checkbox class="combo-scale"  ng-model="cbVoimining"></double-checkbox>
+        <double-checkbox class="combo-scale"  ng-model="cbDiarhea"></double-checkbox>
+        <double-checkbox class="combo-scale"  ng-model="cbFever"></double-checkbox>
+        <double-checkbox class="combo-scale"  ng-model="cbLethargic"></double-checkbox>
+        <label>
+            <span class="txt-small-size">Other symptoms?</span>
+            <input class="toll-input" placeholder="Enter details">
+        </label>
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goPetInto()">Previous</button>
+        <button class="btn btn-long" ng-click="goCurrProblemContinued()">Next</button>
+    </div>
+</div>

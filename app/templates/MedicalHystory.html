@@ -1,0 +1,40 @@
+<div class="title-layout">
+    <form class="layout--centered layout--left">
+        <label>
+            <span class="txt-small-size">Current Mediacal Problems:</span>
+            <input class="toll-input" placeholder="Enter details" ng-focus="logConsole('focus0')" ng-blur="logConsole('blur0')">
+            <input class="toll-input" placeholder="Enter details" ng-focus="logConsole('focus01')" ng-blur="logConsole('blur01')">
+        </label>
+        <label>
+            <span class="txt-small-size">Current Medications</span>
+            <double-checkbox class="combo-left" ng-model="cbModelMedications"></double-checkbox>
+            <span class="txt-small-size">Please List:</span>
+            <div>
+                <input class="toll-input medial-input-short" placeholder="Enter Medication" ng-focus="logConsole('focus1')" ng-blur="logConsole('blur1')">
+                <button class="btn btn--small">Add</button>
+            </div>
+        </label>
+        <label>
+            <span class="txt-small-size">Any Allergies to foods or RX?</span>
+            <double-checkbox class="combo-left" ng-model="cbModelAllergies"></double-checkbox>
+            <span class="txt-small-size">Please List:</span>
+            <div>
+                <input class="toll-input medial-input-short" placeholder="Enter Medication" ng-focus="logConsole('focus2')" ng-blur="logConsole('blur2')">
+                <button  class="btn btn--small">Add</button>
+            </div>
+        </label>
+        <label>
+            <span class="txt-small-size">Surgeries</span>
+            <double-checkbox class="combo-left" ng-model="cbModelSurgeries"></double-checkbox>
+            <span class="txt-small-size">Please List:</span>
+            <div>
+                <input class="toll-input medial-input-short" placeholder="Enter Medication" ng-focus="logConsole('focus3')" ng-blur="logConsole('blur3')">
+                <button  class="btn btn--small">Add</button>
+            </div>
+        </label>
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goCurrProblemContinued()()">Previous</button>
+        <button class="btn btn-long" ng-click="goUploadScreen()">Next</button>
+    </div>
+</div>

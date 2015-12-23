@@ -1,0 +1,23 @@
+<div class="title-layout">
+    <span class="service-txt txt-normal-size">Any other treatment for current problem?</span>
+    <double-checkbox ng-model="cbModel"></double-checkbox>
+    <form class="layout--centered layout--left">
+        <label>
+            <span class="txt-small-size">Prior treatment:</span>
+            <input class="toll-input" placeholder="What treatment?">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="When?">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="Where?">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="Results?">
+        </label>
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goCurrProblem()">Previous</button>
+        <button class="btn btn-long" ng-click="goMedicalHistory()">Next</button>
+    </div>
+</div>

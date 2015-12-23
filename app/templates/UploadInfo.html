@@ -1,0 +1,24 @@
+<div class="title-layout">
+    <span class="service-txt txt-normal-size">Upload Info related to your problem.</span>
+    <form class="layout--centered layout--left">
+        <div>
+            <span class="txt-small-size">Picture of area of concern</span>
+            <input/>
+            <div ng-repeat="item in uploadedDataModel">
+                <img ng-src="{{item.url}}">
+            </div>
+            <button  class="btn btn--small" ng-click="takePhoto(true)">Take photo</button>
+            <button  class="btn btn--small" ng-click="takePhoto()">Gallery</button>
+        </div>
+        <div>
+            <span class="txt-small-size">Video of area of concern</span>
+            <input/>
+            <button  class="btn btn--small">Upload Video</button>
+            <button  class="btn btn--small">Gallery</button>
+        </div>
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goMedicalHystory()">Previous</button>
+        <button class="btn btn-long" ng-click="goConfirmation()">Next</button>
+    </div>
+</div>

@@ -1,5 +1,13 @@
 @import 'variables'
 
+@font-face
+  font-family: sourceFont
+  src: url(../../www/fonts/SourceSansPro-Regular.otf)
+
+
+body
+  font-family: sourceFont
+
 .app-layout
   background: url("../../www/images/bg.jpg") no-repeat center center scroll #2C2927
   background-size: cover
@@ -13,11 +21,19 @@
 .layout--top-offset
   margin-top: 2%
 
+.layout--big-offset
+  margin-top: 10%
+
 .header-img
   right: 5px
   width: 20%
   top: 20px
   position: absolute
+
+.header-title
+  font-size: 1.3em
+  color: white
+  line-height: 60px
 
 .header-img--menu-logo
   position: absolute
@@ -45,10 +61,28 @@ form input
   background: transparent
   border-radius: 0
 
+input[type="checkbox"]
+  position: absolute
+  left: -9999px
+
+input[type="checkbox"] + label
+  background: url(../images/cb.gif) 0 0 no-repeat
+  background-position: 0 3px
+  padding: 3px 0 0 20px
+
+input[type="checkbox"]:checked + label
+  background-position: 0 -29px
+
+
 .input:focus
-  -webkit-tap-highlight-color: white !important
-  -webkit-focus-ring-color: white !important
+  -webkit-input-placeholder: $placeholder_gray
+  //-webkit-tap-highlight-color:\ white !important
+  //-webkit-focus-ring-color: white !important
   outline: none !important
+
+select
+  color: $txt_gray !important
+  border: 1px solid $light_gray
 
 .txt--gray
   color: $txt_gray
@@ -59,11 +93,22 @@ form input
 .btn
   border-radius: 5px
   min-width: 25%
-  margin: 20px
+  margin: 20px 20px 0 20px
   border: none
   line-height: 1.6em
   color: white
   background: linear-gradient(to bottom, $blue_gradient_top, $blue_gradient_bottom)
+  outline: none !important
+
+.btn--long
+  min-width: 40%
+  margin: 1% 20%
+
+.btn--small
+  font-size: 0.8em
+  min-width: 20%
+  margin: 5px
+
 
 .login-layout--btn
   width: 100%
@@ -92,11 +137,13 @@ form input
   margin-left: auto
   text-align: center
 
+.layout--left
+  text-align: left
+
 .login-img
   width: 74%
   display: block
-  padding-bottom: 5%
-
+  padding: 5% 0
 
 .service-txt
   color: $light_blue
@@ -120,6 +167,11 @@ form input
 .signup-layout--btn
   text-align: center
 
+.btn--bottom
+  width: 100%
+  position: fixed
+  bottom: 10px
+
 .btn--plus
   width: 80px
   height: 80px
@@ -136,10 +188,22 @@ form input
 .title-pet
   color: $orange
   font-size: 1.2em
+
+.txt-small-size
+  font-size: 0.8em
+
+.txt-normal-size
+  font-size: 1em
+
+.txt-color-light-gray
+  color: $txt_light_gray
+
+.main-container
+  height: $main_height
   
 .menu-layout
   left: -100%
-  height: -webkit-calc(100% - 60px)
+  height: $main_height
   width: 100%
   position: absolute
   top: 60px
@@ -169,3 +233,71 @@ form input
   transition-duration: 0.5s
   left: -30%
 
+.welcome-icons
+  position: fixed
+  display: inline-table
+  padding: 0 1%
+  bottom: 1%
+  left: 0
+
+.welcome-icon-layout
+  padding: 1%
+  width: 18%
+
+.circle
+  padding-left: 30px
+
+.circle::after
+  content: ""
+  position: fixed
+  margin-top: 3px
+  width: 15px
+  margin-left: -20px
+  height: 15px
+  background: black
+  border-radius: 15px
+
+.circleselected::after
+  background: $bright_green
+
+.layout-inline
+  display: -webkit-box
+
+.toll-input
+  width: 100%
+  font-size: 0.8em
+  margin-bottom: 5px
+  letter-spacing: 0.1em
+  height: 30px
+  -webkit-input-placeholder: $placeholder_light_gray
+  outline: none !important
+
+.medial-input-short
+  width: 70%
+
+.spacer
+  display: flex
+  justify-content: space-between
+  max-width: 80%
+
+.combo-scale
+  font-size: 0.8em
+
+.combo-scale .circle
+  padding-left: 25px
+  padding-right: 5px
+
+.combo-scale .circle::after
+  margin-top: 0
+  margin-left: -15px
+
+.combo-left .circle
+  padding-left: 20px
+  padding-right: 5px
+
+.combo-left .spacer
+  display: block
+
+.combo-left .circle::after
+  margin-top: 3px
+  margin-left: -15px

@@ -1,15 +1,6 @@
 <div class="layout--centered">
     <div class="txt-placeholder--gray">
-        <div class="title-format">
-            <span class="txt--gray">Add Pet</span>
-            <div class="btn--plus"></div>
-            <div class="layout--top-offset">
-                <img src="images/camera_icon.png">
-                <span class="service-txt--blue">Upload Photo</span>
-            </div>
-
-        </div>
-        <form class="layout--centered">
+        <form class="layout--centered layout--big-offset">
             <label>
                 <input type="text" placeholder="Name">
             </label>
@@ -25,9 +16,10 @@
             <label>
                 <input type="text" placeholder="Gender">
             </label>
+
+            <double-checkbox ng-model="cbModel"></double-checkbox>
             <div class="login-layout--btn layout--centered">
-                <button class="btn" ng-click="">Add</button>
-                <button class="btn" ng-click="goSelectPet()">Next</button>
+                <button class="btn" ng-click="goCurrProblem()">Next</button>
             </div>
         </form>
     </div>

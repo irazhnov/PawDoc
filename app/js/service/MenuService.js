@@ -7,7 +7,7 @@ angular
                 items: [
                 {title:'My Account', url:'main/welcome'},
                 {title:'My Pets', url:'main/selectpet' },
-                {title:'My Cases', url:'main/selectpet'},
+                {title:'My Cases', url:'main/currproblem'},
                 {title:'Make Appoinment', url:''},
                 {title:'Call Office', url:''},
                 {title:'Get Alerts', url:''},
@@ -21,6 +21,6 @@ angular
             },
             toggleMenu: function () {
                 menuModel.isOpen = !menuModel.isOpen;
-            },
+            }
         }
     }]);

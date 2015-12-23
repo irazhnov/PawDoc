@@ -1,4 +1,4 @@
-<div class="login-layout layout--centered">
+<div class="layout--centered">
     <div class="layout-header">
         <img class="header-img" src="images/header_logo.png">
     </div>
@@ -6,7 +6,7 @@
         <div class="title-format">
             <span class="txt--gray">Create new Account</span>
         </div>
-        <form class="layout--centered">
+        <form class="layout--centered layout--left">
             <label>
                 <input type="text" placeholder="First Name">
             </label>
@@ -26,11 +26,11 @@
                 <input type="password" placeholder="Re-enter Password">
             </label>
             <div>
-                <input class="signup-ckeckbox" type="checkbox" ng-model="model">
-                <span class="service-txt service-txt--signup">Agree to terms of Service</span>
+                <input id="cb" class="signup-ckeckbox" type="checkbox" ng-model="model"/>
+                <label for="cb" class="service-txt service-txt--signup">Agree to terms of Service</label>
             </div>
             <div class="signup-layout--btn">
-                <button class="btn" ng-disabled="!model.isTermsAcepted">Next</button>
+                <button class="btn" ng-disabled="!model.isTermsAcepted" ng-click="goToOwnerPage()">Next</button>
             </div>
         </form>
     </div>

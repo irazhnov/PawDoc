@@ -6,7 +6,7 @@ angular
             $location.path('/signup')
         };
         $scope.goAddpet = function () {
-            $location.path('/addpet')
+            $location.path('/main/addPet')
         };
 
     });
