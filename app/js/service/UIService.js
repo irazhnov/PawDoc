@@ -3,14 +3,28 @@ angular
     .service('uiService', [function () {
         return {
             uiModel: {
-                headerTitle: ''
+                headerTitle: '',
+                callNumber: '112'
             },
-            uploadedDataModel:[
-                //sample object
-                //{
-                //    url:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
-                //}
-            ],
+            uploadedDataModel:{
+                //uploadedPictureUrls: [{url:'../www/images/mockup/20150113_141944.jpg'},{url:'../www/images/mockup/20150305_162322.jpg'},{url:'../www/images/mockup/20150305_162324.jpg'}],
+                uploadedPictureUrls: [],
+                uploadedVideoUrl:''
+            },
+            petsModel: {
+              pets: [
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Kona'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Barnaby'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'}
+              ]
+            },
+            currentPet: {},
+            setHeaderTitle : function (value) {
+                this.uiModel.headerTitle = value;
+            },
             showNotification : function(type , duration) {
                 window.plugins.toast.show(type ,duration ? duration : 'short','center');
         }

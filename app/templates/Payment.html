@@ -1,0 +1,32 @@
+<div class="title-layout">
+    <span class="service-txt">Please select method of payment and enter below</span>
+    <form class="layout--centered layout--left payment-form">
+        <label>
+            <input class="toll-input" placeholder="Card Number: 5555 5555 5555 5555">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="EXP 00/00">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="CCV">
+        </label>
+        <div>
+            <input id="cb" class="signup-ckeckbox" type="checkbox" ng-model="model"/>
+            <label for="cb" class="service-txt service-txt--signup">Agree to terms of Service</label>
+        </div>
+        <label class="title-layout">
+            <span class="service-txt">Have promo code? Enter it below.</span>
+            <div>
+                <input class="toll-input medial-input-short" placeholder="Enter Code" ng-focus="logConsole('focus2')" ng-blur="logConsole('blur2')">
+                <button  class="btn btn--small">Apply</button>
+            </div>
+        </label>
+        <span class="service-txt--login">Total: $85</span>
+
+
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goPricing()">Previous</button>
+        <button class="btn btn-long" ng-click="goCall()">Next</button>
+    </div>
+</div>

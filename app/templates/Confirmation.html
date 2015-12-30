@@ -1,0 +1,16 @@
+<div class="title-layout layout--centered">
+    <div >
+        <span class="service-txt txt-normal-size">Current Problem</span>
+        <textarea class="text-area"></textarea>
+    </div>
+    <span class="service-txt txt-normal-size">File Uploads</span>
+    <div class="list-vertical" ng-mouseenter="lockMenu(true)" ng-mouseleave="lockMenu(false)" >
+        <div class="" ng-repeat="item in uploadedDataModel.uploadedPictureUrls" >
+            <img class="confirmation-img" ng-src="{{item.url}}" >
+        </div>
+    </div>
+    <div class="btn--bottom">
+        <button class="btn btn-long" ng-click="goUploadInfo()">Previous</button>
+        <button class="btn btn-long" ng-click="goPricing()">Next</button>
+    </div>
+</div>

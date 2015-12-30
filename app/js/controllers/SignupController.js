@@ -1,8 +1,8 @@
 angular
     .module(AppConfig.name)
-    .controller('SignupCtrl', function ($scope, signupService) {
-        $scope.goToOwnerPage = function () {
-          $location.path('/owner');
+    .controller('SignupCtrl', function ($scope, $location, signupService) {
+        $scope.goToSelectPage = function () {
+          $location.path('/main/selectpet');
         };
         $scope.model = signupService.signupModel;
 

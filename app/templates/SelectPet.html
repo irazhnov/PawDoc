@@ -1,8 +1,14 @@
 <div class="layout--centered" >
     <div class="title-layout">
-        <span class="title-format title-pet">Select Pet</span>
+        <span class="title-pet">Select Pet</span>
     </div>
-    <div class="pets-list"></div>
-    <button class="btn">+Add Pet</button>
+    <div class="selectpet-list--scroll">
+        <div class="selectpet-item" ng-repeat="pet in pets" ng-click="choosePet(pet)">
+           <img class="selectpet-img" ng-src="{{pet.url}}">
+           <span class="selectpet-title">{{pet.moniker}}</span>
+        </div>
+    </div>
+
+    <button class="btn" ng-click="goAddPet()">+Add Pet</button>
     <div class="clearfix"></div>
 </div>

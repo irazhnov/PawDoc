@@ -1,14 +1,14 @@
 <div class="txt--gray">
-    <div class="login-logo">
+    <div>
         <img class="login-img layout--centered" src="images/logo.png">
-        <span class="txt--gray">Welcome to Paw Doc</span>
     </div>
-    <div class="title-layout">
-        <span class="title-format title-pet">Hello Pet</span>
+    <div>
+        <span class="title-format title-pet ">Hello {{pet.moniker}}</span>
+        <img class="welcome-img" ng-src="{{pet.url}}">
     </div>
-    <div class="layout--centered">
-        <button class="btn btn-long" ng-click="goAddpet()">New case</button>
-        <button class="btn btn-long" ng-click="goViewCase()">View case</button>
+    <div class="layout--centered welcome-btn--inline">
+        <button class="btn btn--long" ng-click="goNewCase()">New Case</button>
+        <button class="btn btn--long" ng-click="goViewCase()">View case</button>
     </div>
     <div class="welcome-icons">
         <img class="welcome-icon-layout" src="images/call_icon.png">

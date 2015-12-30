@@ -4,17 +4,26 @@
         <div>
             <span class="txt-small-size">Picture of area of concern</span>
             <input/>
-            <div ng-repeat="item in uploadedDataModel">
-                <img ng-src="{{item.url}}">
+            <div class="upload-form--scroll">
+                <div ng-repeat="item in uploadedDataModel.uploadedPictureUrls">
+                    <img class="upload-img" ng-src="{{item.url}}">
+                </div>
             </div>
+
             <button  class="btn btn--small" ng-click="takePhoto(true)">Take photo</button>
             <button  class="btn btn--small" ng-click="takePhoto()">Gallery</button>
         </div>
         <div>
             <span class="txt-small-size">Video of area of concern</span>
             <input/>
-            <button  class="btn btn--small">Upload Video</button>
-            <button  class="btn btn--small">Gallery</button>
+            <!--<div ng-if="uploadedDataModel.uploadedVideoUrl.length > 0">-->
+                <!--<video controls='controls' class="video-player">-->
+                    <!--<source ng-src="{{uploadedDataModel.uploadedVideoUrl}}" type='video/mp4'>-->
+                <!--</video>-->
+            <!--</div>-->
+
+            <button  class="btn btn--small" ng-click="makeMovie()">Upload Video</button>
+            <button  class="btn btn--small" ng-click="getVideoFile()">Gallery</button>
         </div>
     </form>
     <div class="layout--centered btn--bottom">

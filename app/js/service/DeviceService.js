@@ -1,6 +1,6 @@
 angular
     .module(AppConfig.name)
-    .service('deviceService',['$q', function ($q){
+    .service('deviceService',['$q', '$window', function ($q, $window){
         var self = this;
             this.device = {
             screen : {
@@ -32,27 +32,18 @@ angular
             }, options);
             return q.promise;
         };
-        this.convertImgToBase64 = function(url, callback, outputFormat, quality) {
-            var canvas = document.createElement('CANVAS'),
-                ctx = canvas.getContext('2d'),
-                img = new Image();
-            img.crossOrigin = 'Anonymous';
-            img.onload = function() {
-                var dataURL;
-                canvas.height = img.height;
-                canvas.width = img.width;
-                try {
-                    ctx.drawImage(img, 0, 0);
-                    dataURL = canvas.toDataURL(outputFormat, quality);
-                    callback(null, dataURL);
-                } catch (e) {
-                    callback(e, null);
-                }
-                canvas = img = null;
-            };
-            img.onerror = function() {
-                callback(new Error('Could not load image'), null);
-            };
-            img.src = url;
-        };
+        this.getFile = function() {
+            var q = $q.defer();
+            console.log('device.platform: ' + device.platform);
+            if(device.platform.toLowerCase() !== 'ios') {
+                console.log('open');
+                $window.plugins.mfilechooser.open(['.mp4', '.avi','.mkv', '.h264'], function (uri) {
+                    //callback(uri);
+                    q.resolve(uri);
+                }, function (error) {
+                    q.reject(error);
+                });
+            }
+            return q.promise;
+            }
     }]);

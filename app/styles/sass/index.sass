@@ -1,4 +1,8 @@
 @import 'variables'
+@import 'selectPet'
+@import 'welcome'
+
+
 
 @font-face
   font-family: sourceFont
@@ -9,7 +13,7 @@ body
   font-family: sourceFont
 
 .app-layout
-  background: url("../../www/images/bg.jpg") no-repeat center center scroll #2C2927
+  background: url("../../www/images/bg.png") no-repeat center center scroll $blue_gradient_bottom
   background-size: cover
   width: 100%
   height: 100%
@@ -47,7 +51,8 @@ body
   font-size: 0.9em
   color: $blue_gradient_top
 
-form
+form,
+.text-area
   width: 80%
 
 label
@@ -60,6 +65,7 @@ form input
   border: 1px solid $light_gray
   background: transparent
   border-radius: 0
+  outline: none !important
 
 input[type="checkbox"]
   position: absolute
@@ -101,13 +107,21 @@ select
   outline: none !important
 
 .btn--long
-  min-width: 40%
-  margin: 1% 20%
+  min-width: 70%
+  margin: 2% 20%
 
 .btn--small
   font-size: 0.8em
   min-width: 20%
   margin: 5px
+
+.btn-price
+  margin-top: 10px
+  height: 80px
+  border-radius: 25px
+
+.btn-price span
+  display: block
 
 
 .login-layout--btn
@@ -178,16 +192,13 @@ select
   border-radius: 10px
   background-color: $dark_gray
 
-.pets-list
-  height: 300px
-  width: 80%
-
 .title-layout
   padding-top: 20px
 
 .title-pet
+  display: block
   color: $orange
-  font-size: 1.2em
+  font-size: 1.3em
 
 .txt-small-size
   font-size: 0.8em
@@ -301,3 +312,41 @@ select
 .combo-left .circle::after
   margin-top: 3px
   margin-left: -15px
+
+.video-player
+  width: 320px
+  height: 240px
+
+.list-vertical
+  overflow-y: scroll
+  height: 160px
+
+.upload-img
+  height: 100px
+  padding: 5px
+
+.upload-form--scroll
+  height : 250px
+  overflow-y: scroll
+
+.payment-form label
+  padding-bottom: 5px
+
+.confirmation-img
+  width: 80%
+  padding: 5px
+
+.call-img
+  left: -25%
+  height: 30px
+  position: relative
+
+.call-btn
+  height: 40px
+  line-height: 40px
+  border-radius: 15px
+
+.input-helper-layout
+  width: 100%
+  top: 0
+  position: relative
