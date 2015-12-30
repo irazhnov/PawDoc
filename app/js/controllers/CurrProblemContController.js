@@ -1,7 +1,7 @@
 angular
     .module(AppConfig.name)
-    .controller('CurrProblemContCtrl', function ($scope, $location) {
-        $scope.goPetInto = function () {
+    .controller('CurrProblemContCtrl', function ($scope, $location, uiService) {
+        $scope.goCurrProblem = function () {
             $location.path('/main/petinfo');
         };
         $scope.goMedicalHistory = function () {
@@ -13,4 +13,5 @@ angular
             no: 'New problem',
             selected:false
         };
+        uiService.setHeaderTitle('Current Problem');
     });

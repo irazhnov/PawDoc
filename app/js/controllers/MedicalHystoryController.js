@@ -1,9 +1,6 @@
 angular
     .module(AppConfig.name)
-    .controller('MedicalHystoryCtrl', function ($scope, $location) {
-        $scope.logConsole = function (value) {
-          console.log(value);
-        };
+    .controller('MedicalHystoryCtrl', function ($scope, $location, uiService) {
         $scope.goCurrProblemContinued = function () {
             $location.path('/main/currproblemcont');
         };
@@ -28,4 +25,5 @@ angular
             no: 'No',
             selected:false
         };
+        uiService.setHeaderTitle('Medical Hystory');
     });

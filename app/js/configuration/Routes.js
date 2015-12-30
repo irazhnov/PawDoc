@@ -42,7 +42,8 @@ angular
             url: '/addpet',
             views: {
                 "main": {
-                    templateUrl: "templates/AddPet.html"
+                    templateUrl: "templates/AddPet.html",
+                    controller: 'AddPetCtrl'
                 }
             }
         });
@@ -50,7 +51,8 @@ angular
             url: '/selectpet',
             views: {
                 "main": {
-                    templateUrl: "templates/SelectPet.html"
+                    templateUrl: "templates/SelectPet.html",
+                    controller: 'SelectPetCtrl'
                 }
             }
         });
@@ -103,8 +105,35 @@ angular
             url: '/confirmation',
             views: {
                 "main": {
-                    templateUrl: "templates/MedicalHystory.html",
-                    controller: 'MedicalHystoryCtrl'
+                    templateUrl: "templates/Confirmation.html",
+                    controller: 'ConfirmationCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.pricing',{
+            url: '/pricing',
+            views: {
+                "main": {
+                    templateUrl: "templates/Pricing.html",
+                    controller: 'PricingCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.payment',{
+            url: '/payment',
+            views: {
+                "main": {
+                    templateUrl: "templates/Payment.html",
+                    controller: 'PaymentCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.call',{
+            url: '/call',
+            views: {
+                "main": {
+                    templateUrl: "templates/Call.html",
+                    controller: 'CallCtrl'
                 }
             }
         });

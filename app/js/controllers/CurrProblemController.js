@@ -47,5 +47,6 @@ angular
             {title:'More than 5 years'},
             {title:'Since childhood'},
             {title:'Since birth'}
-        ]
+        ];
+        uiService.setHeaderTitle('Current Problem');
     });
