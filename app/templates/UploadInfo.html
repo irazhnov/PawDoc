@@ -25,6 +25,12 @@
             <button  class="btn btn--small" ng-click="makeMovie()">Upload Video</button>
             <button  class="btn btn--small" ng-click="getVideoFile()">Gallery</button>
         </div>
+        <div>
+            <span class="txt-small-size upload-form--audio-title">Audio of area of concern</span>
+            <button  class="btn btn--small" ng-click="getAudioFile()">Upload Audio</button>
+            <button  class="btn btn--small" ng-click="startRecordAudio()" ng-hide="uploadedDataModel.isRecordingAudio">Record audio</button>
+            <button  class="btn btn--small" ng-click="stopRecordAudio()" ng-show="uploadedDataModel.isRecordingAudio">Stop record</button>
+        </div>
     </form>
     <div class="layout--centered btn--bottom">
         <button class="btn btn-long" ng-click="goMedicalHystory()">Previous</button>
