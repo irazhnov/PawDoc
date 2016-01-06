@@ -1,0 +1,88 @@
+.checkbox
+    position: absolute
+    left: -9999px
+
+.checkbox:not(checked) + label:before
+    content: ''
+    position: absolute
+    top: -4px
+    left: 0
+    width: 35px
+    height: 20px
+    border-radius: 10px
+    border: 1px solid #ccc
+    background: #fff
+
+.checkbox:checked + label:after
+    left: 15px
+.checkbox:checked + label:before
+    background: $bright_green
+
+.checkbox:not(checked) + label:after
+    content: ''
+    position: absolute
+    top: -4px
+    left: 0
+    width: 20px
+    height: 20px
+    border-radius: 10px
+    background: #FFF
+    border: 1px solid #ccc
+    transition: all .2s
+
+.checkbox:not(checked) + label
+    position: relative
+    padding: 0 0 0 60px
+
+.settings
+    display: flex
+    justify-content: space-between
+
+.settings-main-container
+    height: calc(100% - 180px)
+    overflow-y: scroll
+
+.settings-spacer
+    display: flex
+    justify-content: space-between
+
+.settings-service-txt
+    color: $light_blue
+    padding-left: 10%
+
+.settings-container
+    border-bottom: 1px solid $light_gray
+    padding: 10px 0
+
+.notifications-block
+    height: 270px
+    overflow: hidden
+    transition: all .5s ease-in-out
+
+.password-block
+    height: 130px
+    overflow: hidden
+    transition: all .5s ease-in-out
+
+.makeanim
+    height: 0
+
+.animheader
+    height: 50px
+    transition: all .5s ease-in-out
+
+.makeanimheader
+    height: 260px
+
+.settings-bottom
+    width: 100%
+    position: fixed
+    bottom: 80px
+
+.settings-arrow
+    width: 17px
+    height: 17px
+    transition: all .5s ease-in-out
+
+.arrowrotated
+    transform: rotate(-90deg)

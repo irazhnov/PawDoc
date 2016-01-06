@@ -1,0 +1,55 @@
+<div class="settings-main-container">
+        <div class="layout--left title-layout">
+            <span class="settings-service-txt">Update Settings</span>
+        </div>
+        <div class="layout--centered text-area">
+            <div class="settings-container">
+                <div class="settings-spacer">
+                    <span>Stay logged On</span>
+                    <input id="longCheckbox" class="checkbox" type="checkbox">
+                    <label for="longCheckbox"></label>
+                </div>
+                <div class="layout--left txt-small-size">
+                    <span>If you stay logged in for 20 minutes.If off? you will be logged off when you close app.</span>
+                </div>
+            </div>
+            <div >
+                <div class="settings-spacer settings-container">
+                    <span class="settings-spacer">Notifications</span>
+                    <img ng-class="{arrowrotated:model.isNotificationSpoilerOpen}" class="settings-arrow" src="images/left_icon.png" ng-click="toggleNotificationSpoiler()">
+                </div>
+                <div class="notifications-block layout--left" ng-class="{makeanim:model.isNotificationSpoilerOpen}">
+                    <span class="txt-middle-size">Notify of new alerts? case status changes? and any other messages I have set up.</span>
+                    <span class="layout--block">Get Notified By:</span>
+                    <div class="settings-spacer">
+                        <span class="settings-spacer">Push Notification</span>
+                        <input id="longCheckbox1" class="checkbox" type="checkbox">
+                        <label class="" for="longCheckbox1"></label>
+                    </div>
+                    <span class="layout--block">Email</span>
+                    <input>
+                    <button class="btn btn--long">Add</button>
+                    <span class="layout--block">Text Message</span>
+                    <input>
+                    <button class="btn btn--long">Add</button>
+                </div>
+            </div>
+            <div >
+                <div class="settings-spacer settings-container">
+                    <span class="settings-spacer">Change Password</span>
+                    <img ng-class="{arrowrotated:model.isPasswordSpoilerOpen}" class="settings-arrow" src="images/left_icon.png" ng-click="togglePasswordSpoiler()">
+                </div>
+                <div class="password-block" ng-class="{makeanim:model.isPasswordSpoilerOpen}">
+                    <input class="toll-input" placeholder="Current Password">
+                    <input class="toll-input" placeholder="New Password">
+                    <input class="toll-input" placeholder="Re-Enter Password">
+                </div>
+            </div>
+        </div>
+
+    <div class="settings-bottom layout--centered">
+        <button class="btn btn--long nomargins" ng-click="goNewCase()">Save</button>
+        <button class="btn btn--long nomargins" ng-click="goViewCase()">Cancel</button>
+    </div>
+    <menu-icons></menu-icons>
+</div>

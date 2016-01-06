@@ -137,6 +137,42 @@ angular
                 }
             }
         });
+        $stateProvider.state('main.appointments',{
+            url: '/appointments',
+            views: {
+                "main": {
+                    templateUrl: "templates/Appointments.html",
+                    controller: 'AppointmentsCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.apptrequest',{
+            url: '/apptrequest',
+            views: {
+                "main": {
+                    templateUrl: "templates/AppointmentRequest.html",
+                    controller: 'ApptrequestCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.notifications',{
+            url: '/notifications',
+            views: {
+                "main": {
+                    templateUrl: "templates/Notifications.html",
+                    controller: 'NotificationsCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.settings',{
+            url: '/settings',
+            views: {
+                "main": {
+                    templateUrl: "templates/Settings.html",
+                    controller: 'SettingsCtrl'
+                }
+            }
+        });
         $urlRouterProvider.otherwise('/');
 });
 

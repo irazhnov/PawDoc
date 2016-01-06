@@ -7,6 +7,7 @@ angular
                 link: function($scope, element) {
                     angular.element(document).ready(function () {
                         element[0].style.minHeight =  window.innerHeight + "px";
+                        element[0].style.height =  window.innerHeight + "px";
                     });
                 }
             };

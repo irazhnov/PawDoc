@@ -15,18 +15,28 @@
         </div>
         <div>
             <span class="txt-small-size">Video of area of concern</span>
-            <input/>
-            <!--<div ng-if="uploadedDataModel.uploadedVideoUrl.length > 0">-->
+            <div>
+                <div ng-repeat="item in uploadedDataModel.uploadedVideoUrls">
+                    <!--<img class="upload-img" ng-src="{{item.url}}">-->
+                    <div style="width: 50px;height: 50px; background-color: #004444;" ng-click="playVideo(item)"></div>
+                </div>
+            </div>
+            <!--<div ng-if="uploadedDataModel.uploadedVideoUrls.length > 0">-->
                 <!--<video controls='controls' class="video-player">-->
-                    <!--<source ng-src="{{uploadedDataModel.uploadedVideoUrl}}" type='video/mp4'>-->
+                    <!--<source ng-src="{{uploadedDataModel.uploadedVideoUrls}}" type='video/mp4'>-->
                 <!--</video>-->
             <!--</div>-->
-
-            <button  class="btn btn--small" ng-click="makeMovie()">Upload Video</button>
-            <button  class="btn btn--small" ng-click="getVideoFile()">Gallery</button>
+            <button  class="btn btn--small" ng-click="getVideoFile()">Upload Video</button>
+            <button  class="btn btn--small" ng-click="recordVideo()">Record Video</button>
         </div>
         <div>
             <span class="txt-small-size upload-form--audio-title">Audio of area of concern</span>
+            <div>
+                <div ng-repeat="item in uploadedDataModel.uploadedVideoUrls">
+                    <!--<img class="upload-img" ng-src="{{item.url}}">-->
+                    <div style="width: 50px;height: 50px; background-color: #004444;" ng-click="playAudio(item)"></div>
+                </div>
+            </div>
             <button  class="btn btn--small" ng-click="getAudioFile()">Upload Audio</button>
             <button  class="btn btn--small" ng-click="startRecordAudio()" ng-hide="uploadedDataModel.isRecordingAudio">Record audio</button>
             <button  class="btn btn--small" ng-click="stopRecordAudio()" ng-show="uploadedDataModel.isRecordingAudio">Stop record</button>

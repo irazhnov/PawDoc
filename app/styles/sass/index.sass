@@ -1,6 +1,11 @@
 @import 'variables'
+@import 'menu'
 @import 'selectPet'
 @import 'welcome'
+@import 'payment'
+@import 'apptrequest'
+@import 'notifications'
+@import 'settings'
 
 
 
@@ -17,6 +22,18 @@ body
   background-size: cover
   width: 100%
   height: 100%
+
+.app-swipe
+  position: absolute
+  top: 0
+  width: 20%
+  height: 100%
+
+.nomargins
+  margin: 0
+
+.nopaddings
+  padding: 0
 
 .layout-header
   background: linear-gradient(to bottom, $blue_gradient_top, $blue_gradient_bottom)
@@ -67,19 +84,6 @@ form input
   border-radius: 0
   outline: none !important
 
-input[type="checkbox"]
-  position: absolute
-  left: -9999px
-
-input[type="checkbox"] + label
-  background: url(../images/cb.gif) 0 0 no-repeat
-  background-position: 0 3px
-  padding: 3px 0 0 20px
-
-input[type="checkbox"]:checked + label
-  background-position: 0 -29px
-
-
 .input:focus
   -webkit-input-placeholder: $placeholder_gray
   //-webkit-tap-highlight-color:\ white !important
@@ -110,6 +114,9 @@ select
   min-width: 70%
   margin: 2% 20%
 
+.btn--middle
+  min-width: 50%
+
 .btn--small
   font-size: 0.8em
   min-width: 20%
@@ -120,9 +127,9 @@ select
   height: 80px
   border-radius: 25px
 
-.btn-price span
+.btn-price span,
+.layout--block
   display: block
-
 
 .login-layout--btn
   width: 100%
@@ -189,19 +196,20 @@ select
 .btn--plus
   width: 80px
   height: 80px
-  border-radius: 10px
-  background-color: $dark_gray
 
 .title-layout
   padding-top: 20px
 
-.title-pet
+.title-orange
   display: block
   color: $orange
   font-size: 1.3em
 
 .txt-small-size
   font-size: 0.8em
+
+.txt-middle-size
+  font-size: 0.9em
 
 .txt-normal-size
   font-size: 1em
@@ -212,46 +220,18 @@ select
 .main-container
   height: $main_height
   
-.menu-layout
-  left: -100%
-  height: $main_height
-  width: 100%
-  position: absolute
-  top: 60px
-  background: linear-gradient(to right, $blue_gradient_left, $blue_gradient_right)
-  transition-property: left
-  transition-duration: 0.5s
-
 .menu-layout--header
   height: 60px
   border-bottom: 1px solid white
 
-.menu-layout--item
-  height: 40px
-  border-bottom: 1px solid white
-  color: white
-  line-height: 2em
-  text-align: left
-
-.menu-item
-  padding-left: 35%
-  top: 5px
-  position: relative
-  font-size: 1.2em
-
-.menuOpened
-  transition-property: left
-  transition-duration: 0.5s
-  left: -30%
-
-.welcome-icons
+.menu-icons
   position: fixed
   display: inline-table
   padding: 0 1%
   bottom: 1%
   left: 0
 
-.welcome-icon-layout
+.menu-icons-layout
   padding: 1%
   width: 18%
 

@@ -3,18 +3,12 @@
         <img class="login-img layout--centered" src="images/logo.png">
     </div>
     <div>
-        <span class="title-format title-pet ">Hello {{pet.moniker}}</span>
+        <span class="title-format title-orange ">Hello {{pet.moniker}}</span>
         <img class="welcome-img" ng-src="{{pet.url}}">
     </div>
     <div class="layout--centered welcome-btn--inline">
         <button class="btn btn--long" ng-click="goNewCase()">New Case</button>
         <button class="btn btn--long" ng-click="goViewCase()">View case</button>
     </div>
-    <div class="welcome-icons">
-        <img class="welcome-icon-layout" src="images/call_icon.png">
-        <img class="welcome-icon-layout" src="images/appt_icon.png">
-        <img class="welcome-icon-layout" src="images/alert_icon.png">
-        <img class="welcome-icon-layout" src="images/mypet_icon.png">
-        <img class="welcome-icon-layout" src="images/food_icon.png">
-    </div>
+    <menu-icons></menu-icons>
 </div>

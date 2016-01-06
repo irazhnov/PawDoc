@@ -1,6 +1,6 @@
 angular
     .module(AppConfig.name)
-    .service('deviceService',['$q', '$window', 'uiService', function ($q, $window, uiService){
+    .service('deviceService',['$q', '$window', '$location', 'uiService', function ($q, $window, $location, uiService){
         var self = this
             , audio;
             this.device = {
@@ -51,7 +51,7 @@ angular
             var promise = self.getFile(['.mp4', '.avi','.mkv', '.h264']);
             promise.then(function (videoURI){
                 console.log('video url ' + videoURI);
-                uiService.uploadedDataModel.uploadedVideoUrl = videoURI;
+                uiService.uploadedDataModel.uploadedVideoUrls.push({url:videoURI});
             },function (err){
                 uiService.showNotification('Video not loaded try again', 'long');
             })
@@ -60,14 +60,14 @@ angular
             var promise = self.getFile(['.mp3', '.wav', 'm4a', 'wma', '.amr']);
             promise.then(function (audioURI){
                 console.log('audio url ' + audioURI);
-                uiService.uploadedDataModel.uploadedAudioUrl = audioURI;
+                uiService.uploadedDataModel.uploadedAudioUrls.push({url:audioURI});
             },function (err){
                 uiService.showNotification('Audio not loaded try again', 'long');
             })
         };
         this.startRecordAudio = function () {
             console.log('startRecordAudio');
-            var src = 'note.amr'
+            var src = device.platform.toLowerCase() == 'ios' ? 'note.wav' : 'note.amr'
                 , success = function (){
                     console.log("recordAudio():Audio Success");
             }
@@ -79,6 +79,14 @@ angular
             audio.startRecord();
         };
         this.stopRecordAudio = function () {
+            console.log('audio.src: ' + audio.src);
             audio.stopRecord();
-        }
+        };
+        this.onBackKeyDown = function () {
+            console.log('onBackKeyDown' + $location.path());
+        };
+
+        (function (){
+            document.addEventListener("volumeupbutton", self.onBackKeyDown, false);
+        })();
     }]);

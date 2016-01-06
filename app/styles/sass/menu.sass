@@ -1,0 +1,24 @@
+.menu-layout
+  left: -100%
+  height: $main_height
+  width: 100%
+  position: absolute
+  top: 60px
+  background: linear-gradient(to right, $blue_gradient_left, $blue_gradient_right)
+  transition-duration: 0.5s
+
+.menu-layout--item
+  height: 40px
+  border-bottom: 1px solid white
+  color: white
+  line-height: 2em
+  text-align: left
+
+.menu-item
+  padding-left: 35%
+  top: 5px
+  position: relative
+  font-size: 1.2em
+
+.menuOpened
+  transform: translateX(70%)

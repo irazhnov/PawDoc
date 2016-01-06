@@ -10,7 +10,8 @@ angular
                 isRecordingAudio:false,
                 //uploadedPictureUrls: [{url:'../www/images/mockup/20150113_141944.jpg'},{url:'../www/images/mockup/20150305_162322.jpg'},{url:'../www/images/mockup/20150305_162324.jpg'}],
                 uploadedPictureUrls: [],
-                uploadedVideoUrl:''
+                uploadedVideoUrls:[],
+                uploadedAudioUrls:[]
             },
             petsModel: {
               pets: [
