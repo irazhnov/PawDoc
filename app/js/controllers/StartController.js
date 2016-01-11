@@ -1,7 +1,7 @@
 angular
     .module(AppConfig.name)
-    .controller('StartCtrl', function ($location, deviceService, generalService) {
-        //$location.path("/main/uploadinfo");
+    .controller('StartCtrl', function ($scope, $location, deviceService, generalService) {
+        $location.path("/main/uploadinfo");
         var self= this;
         document.addEventListener('deviceready', function() {
             StatusBar.hide();

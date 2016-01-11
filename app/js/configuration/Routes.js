@@ -128,6 +128,15 @@ angular
                 }
             }
         });
+        $stateProvider.state('main.thankYou',{
+            url: '/thankyou',
+            views: {
+                "main": {
+                    templateUrl: "templates/ThankYou.html",
+                    controller: 'ThankYouCtrl'
+                }
+            }
+        });
         $stateProvider.state('main.call',{
             url: '/call',
             views: {

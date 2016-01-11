@@ -8,5 +8,6 @@ angular
         $scope.goAddpet = function () {
             $location.path('/main/addPet')
         };
-
+    // /[;,"?<>{}&^%$@!*.#_']/.test(''));
+    //     [A-Za-z0-9]
     });

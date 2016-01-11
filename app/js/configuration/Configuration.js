@@ -4,6 +4,6 @@ var AppConfig = (function (){
     var host='';
     return {
         name: 'PawDoc',
-        dependencies: ['routes', 'ngTouch']
+        dependencies: ['routes', 'ngTouch', 'ngAnimate']
     };
 })();

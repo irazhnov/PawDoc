@@ -7,10 +7,18 @@ angular
             templateUrl: 'templates/components/MenuIcons.html',
             controller: function ($scope, $location, menuService){
                 //$scope.model = menuService.getModel();
-                //$scope.goToPage = function (value) {
-                //    menuService.toggleMenu();
-                //    $location.path(value.url);
-                //};
+                $scope.goToCall = function () {
+                    $location.path('main/call');
+                };
+                $scope.goToAppt = function () {
+                    $location.path('main/appointments');
+                };
+                $scope.goToAlerts = function () {
+                    $location.path('main/notifications');
+                };
+                $scope.goToMyPets = function () {
+                    $location.path('main/selectpet');
+                };
             }
         }
     }]);

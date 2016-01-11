@@ -3,6 +3,7 @@
 @import 'selectPet'
 @import 'welcome'
 @import 'payment'
+@import 'thankyou'
 @import 'apptrequest'
 @import 'notifications'
 @import 'settings'
@@ -28,6 +29,36 @@ body
   top: 0
   width: 20%
   height: 100%
+
+.page-swipe
+  //background-color: white
+  //transition-duration: 0.5s
+
+.main-container.ng-leave
+  z-index: 9988
+
+.main-container.ng-enter
+  z-index: 8888
+
+.page-swipe.ng-enter
+  -webkit-animation: slideInRight 0.5s both ease-out
+  //transform: translateX(100%)
+
+.page-swipe.ng-leave
+  -webkit-animation: slideOutLeft 0.5s both ease-out
+  //transform: translateX(100%)
+
+@keyframes slideInRight
+  from
+    transform: translateX(100%)
+  to
+    transform: translateX(0)
+
+@keyframes slideOutLeft
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-100%)
 
 .nomargins
   margin: 0
@@ -58,7 +89,7 @@ body
 
 .header-img--menu-logo
   position: absolute
-  top: 20px
+  top: 17px
   left: 20px
   width: 40px
 
@@ -214,10 +245,14 @@ select
 .txt-normal-size
   font-size: 1em
 
+.txt-xl-size
+  font-size: 1.4em
+
 .txt-color-light-gray
   color: $txt_light_gray
 
 .main-container
+  //position: absolute
   height: $main_height
   
 .menu-layout--header
