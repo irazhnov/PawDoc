@@ -1,13 +1,15 @@
 angular
     .module(AppConfig.name)
-    .controller('StartCtrl', function ($scope, $location, deviceService, generalService) {
-        $location.path("/main/uploadinfo");
+    .controller('StartCtrl', function ($scope, $rootScope, $location, deviceService, generalService) {
+        $location.path("/main/call");
         var self= this;
         document.addEventListener('deviceready', function() {
+            $rootScope.deviceReady = true;
             StatusBar.hide();
             deviceService.setDeviceInfo(device).then(function() {
                 generalService.bootstrap().then(function() {
-                    $location.path("/main/uploadinfo");
+                    $location.path("/main/call");
+                    //$location.path("/login");
                     //userService.checkIfStoredCredentials() === true ?
                         //restService.postRequest(AppConfig.signINHost, {
                         //    login: userService.getStoredCredentials()[0],

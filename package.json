@@ -15,6 +15,7 @@
     "angular-touch": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "browser-sync": "^2.10.0",
+    "express": "^4.13.3",
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -29,6 +30,8 @@
     "hint": "^2.0.0",
     "http": "0.0.0",
     "jshint-stylish": "^2.1.0",
-    "run-sequence": "^1.1.5"
+    "lodash": "^3.10.1",
+    "run-sequence": "^1.1.5",
+    "socket.io": "^1.4.4"
   }
 }

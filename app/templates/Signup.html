@@ -26,12 +26,12 @@
                 <input type="password" placeholder="Re-enter Password">
             </label>
             <div>
-                <input id="cb" class="signup-ckeckbox" type="checkbox" ng-model="model"/>
-                <label for="cb" class="service-txt service-txt--signup">Agree to terms of Service</label>
+                <input id="cb" class="checkboxblue signup-checkbox" type="checkbox" ng-model="model"/>
+                <label for="cb" class="service-txt service-txt--signup" ng-sel>Agree to terms of Service</label>
             </div>
             <div class="signup-layout--btn">
-                <button class="btn" ng-disabled="!model.isTermsAcepted" ng-click="goToOwnerPage()">Next</button>
-            </div>
+                <button class="btn" ng-click="goToSelectPage()">Next</button>
+            </div><!--ng-disabled="!model.isTermsAcepted"-->
         </form>
     </div>
 </div>

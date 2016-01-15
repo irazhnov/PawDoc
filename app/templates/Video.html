@@ -1,0 +1,22 @@
+<div>
+    <input ng-model="model.name">
+    <button class="btn" ng-click="login();">Login</button>
+    <div ng-repeat="item in allContacts | filter:hideCurrentUsers()">
+        <div ng-click="addContact(item)">ready to call: {{item}}</div>
+    </div>
+    <div class="calling-container" ng-if="isWaitCall && !callInProgress">
+        <p>Calling to <span>{{ contactName }}</span>...</p>
+        <button class="btn" ng-click="ignore()">Nevermind</button>
+    </div>
+    <div class="calling-container" ng-if="!isWaitCall && !callInProgress">
+        <p><span class="balanced">{{ contactName }}</span> is calling you</p>
+
+        <button class="btn" ng-click="answer()">Answer</button>
+        <button class="btn" ng-click="ignore()">Ignore</button>
+    </div>
+    <div class="calling-container" ng-if="callInProgress">
+        <p>Call in progress...</p>
+        <button class="btn" ng-click="end()">End</button>
+    </div>
+    <video-view></video-view>
+</div>

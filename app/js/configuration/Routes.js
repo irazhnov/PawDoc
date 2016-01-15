@@ -182,6 +182,15 @@ angular
                 }
             }
         });
+        $stateProvider.state('main.video',{
+            url: '/video',
+            views: {
+                "main": {
+                    templateUrl: "templates/Video.html",
+                    controller: 'VideoCtrl'
+                }
+            }
+        });
         $urlRouterProvider.otherwise('/');
 });
 
