@@ -1,6 +1,7 @@
-angular.module(AppConfig.name)
-
+angular
+    .module(AppConfig.name)
     .controller('VideoCtrl', function ($scope, $rootScope, $state, signalingService, contactsService, $timeout, uiService) {
+        //var contacts = {};
         $scope.model = {name: 'office'};
         $scope.loading = false;
 
@@ -65,15 +66,16 @@ angular.module(AppConfig.name)
         };
 
         $scope.answer = function () {
+
             if ($scope.callInProgress) { return; }
 
             $scope.callInProgress = true;
             $timeout($scope.updateVideoPosition, 1000);
 
-            call(false, $scope.model.name);
+            call(false, $scope.contactName);
 
             setTimeout(function () {
-                console.log('sending answer');
+                console.log('sending answer ' + $scope.contactName +   ' vs ' + $scope.model.name);
                 signalingService.emit('sendMessage', $scope.contactName, { type: 'answer' });
             }, 1500);
         };
@@ -127,7 +129,7 @@ angular.module(AppConfig.name)
             var config = {
                 isInitiator: isInitiator,
                 turn: {
-                    host: 'turn:192.168.1.107:3478',
+                    host: 'turn:192.168.2.28:3478',
                     username: 'ubuntu',
                     password: 'VP_0ln'
                 },
@@ -136,11 +138,10 @@ angular.module(AppConfig.name)
                     video: true
                 }
             };
-
             var session = new cordova.plugins.phonertc.Session(config);
 
             session.on('sendMessage', function (data) {
-                console.log(' session.on(sendMessage)' + JSON.stringify(data));
+                console.log('session .on(sendMessage)' + JSON.stringify(data));
                 signalingService.emit('sendMessage', contactName, {
                     type: 'phonertc_handshake',
                     data: JSON.stringify(data)
@@ -148,11 +149,11 @@ angular.module(AppConfig.name)
             });
 
             session.on('answer', function () {
-                console.log('Answered!');
+                console.log('session   Answered!');
             });
 
             session.on('disconnect', function () {
-                console.log('session.on (disconnect)');
+                console.log('session    on (disconnect)');
                 if ($scope.contacts[contactName]) {
                     delete $scope.contacts[contactName];
                 }
@@ -169,6 +170,7 @@ angular.module(AppConfig.name)
 
             session.call();
 
+            console.log('contacts[contactName]=  ' + contactName);
             $scope.contacts[contactName] = session;
         }
 
@@ -182,6 +184,7 @@ angular.module(AppConfig.name)
                     $scope.isWaitCall = false;
                     break;
                 case 'answer':
+                    console.log('onMessageReceive   answer');
                     $scope.$apply(function () {
                         $scope.callInProgress = true;
                         $timeout($scope.updateVideoPosition, 1000);
@@ -211,16 +214,19 @@ angular.module(AppConfig.name)
                         if (i > -1) {
                             $scope.hideFromContactList.splice(i, 1);
                         }
-
                         if (Object.keys($scope.contacts).length === 0) {
-                            $state.go('app.contacts');
+
+                            //$state.go('app.contacts');
                         }
                     } else {
-                        $state.go('app.contacts');
+                        console.log('22   $state.go(app.contacts);');
+                        //$state.go('app.contacts');
                     }
 
                     break;
                 case 'phonertc_handshake':
+                    console.log('phonertc_handshake ' + $scope.contacts[name]);
+                    console.log('name' + name);
                     if (duplicateMessages.indexOf(message.data) === -1) {
                         $scope.contacts[name].receiveMessage(JSON.parse(message.data));
                         duplicateMessages.push(message.data);
@@ -228,6 +234,7 @@ angular.module(AppConfig.name)
 
                     break;
                 case 'add_to_group':
+                    console.log('add_to_group');
                     message.contacts.forEach(function (contact) {
                         $scope.hideFromContactList.push(contact);
                         call(message.isInitiator, contact);
