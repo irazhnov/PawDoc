@@ -1,7 +1,6 @@
 angular
     .module(AppConfig.name)
     .controller('VideoCtrl', function ($scope, $rootScope, $state, signalingService, contactsService, $timeout, uiService) {
-        //var contacts = {};
         $scope.model = {name: 'office'};
         $scope.loading = false;
 
@@ -17,11 +16,15 @@ angular
         $scope.hideFromContactList = [$scope.model.name];
         $scope.muted = false;
 
-        $scope.login = function () {
+        $scope.connect = function () {
             $scope.loading = true;
             $scope.hideFromContactList = [$scope.model.name];
+            signalingService.disconnect();
+            signalingService.establishConnection();
             //$scope.contactName = $scope.model.name;
-            signalingService.emit('login', $scope.model.name);
+            $timeout(function () {
+                signalingService.emit('login', $scope.model.name);
+            },200);
         };
 
         signalingService.on('login_error', function (message) {
@@ -163,8 +166,10 @@ angular
                     console.log('on disconnect:    $state.go(app.contacts');
                     $scope.callInProgress = false;
                     $scope.isWaitCall = true;
-
-                    //$state.go('app.contacts');
+                }
+                if($rootScope.deviceReady) {
+                    AudioToggle.setAudioMode(AudioToggle.EARPIECE);
+                    chrome.power.releaseKeepAwake('display');
                 }
             });
 
@@ -222,7 +227,10 @@ angular
                         console.log('22   $state.go(app.contacts);');
                         //$state.go('app.contacts');
                     }
-
+                    if($rootScope.deviceReady) {
+                        AudioToggle.setAudioMode(AudioToggle.EARPIECE);
+                        chrome.power.releaseKeepAwake('display');
+                    }
                     break;
                 case 'phonertc_handshake':
                     console.log('phonertc_handshake ' + $scope.contacts[name]);
@@ -231,7 +239,10 @@ angular
                         $scope.contacts[name].receiveMessage(JSON.parse(message.data));
                         duplicateMessages.push(message.data);
                     }
-
+                    if($rootScope.deviceReady) {
+                        AudioToggle.setAudioMode(AudioToggle.SPEAKER);
+                        chrome.power.requestKeepAwake();
+                    }
                     break;
                 case 'add_to_group':
                     console.log('add_to_group');

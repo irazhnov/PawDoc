@@ -21,5 +21,7 @@ angular
             $window.plugins.CallNumber.callNumber(onSuccess, onError, uiService.uiModel.callNumber, bypassAppChooser);
         };
         $scope.uiModel = uiService.uiModel;
+        // disconnect socket from server
+        signalingService.disconnect();
         uiService.setHeaderTitle('Call');
     });
