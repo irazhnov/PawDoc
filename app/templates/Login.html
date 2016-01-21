@@ -7,14 +7,14 @@
     <div class="login--form txt-placeholder--gray">
         <form class="layout--centered">
             <label>
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" ng-model="model.username">
             </label>
             <label>
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" ng-model="model.password">
             </label>
             <div class="login-layout--btn layout--centered">
-                <button class="btn" ng-click="goAddpet()">Login</button>
-                <button class="btn" ng-click="goSignup()">Sugn Up</button>
+                <button class="btn" ng-click="login()">Login</button>
+                <button class="btn" ng-click="goSignup()">Sign Up</button>
             </div>
             <span class="service-txt">Forgot your login</span>
         </form>

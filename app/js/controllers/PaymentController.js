@@ -1,11 +1,11 @@
 angular
     .module(AppConfig.name)
     .controller('PaymentCtrl', function ($scope, $location, uiService) {
-        $scope.goPricing= function () {
+        $scope.goCases= function () {
             $location.path('/main/pricing');
         };
-        $scope.goCall= function () {
-            $location.path('/main/call');
+        $scope.goNext= function () {
+            $location.path('/main/thankyou');
         };
         uiService.setHeaderTitle('Payment');
     });

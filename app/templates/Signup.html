@@ -8,29 +8,29 @@
         </div>
         <form class="layout--centered layout--left">
             <label>
-                <input type="text" placeholder="First Name">
+                <input type="text" ng-model="model.firstName" placeholder="First Name" onblur="isValid('firstName')" ng-class="{'input-invalid':modelError.firstName}">
             </label>
             <label>
-                <input type="text" placeholder="Password">
+            <input type="text" ng-model="model.lastName" placeholder="Last Name" onblur="isValid('lastName')" ng-class="{'input-invalid':modelError.lastName}">
             </label>
             <label>
-                <input type="text" placeholder="Username">
+                <input type="text" ng-model="model.userName" placeholder="Username" onblur="isValid('userName')" ng-class="{'input-invalid':modelError.userName}">
             </label>
             <label>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" ng-model="model.email" onblur="isValid('email')" ng-class="{'input-invalid':modelError.email}">
             </label>
             <label>
-                <input type="password" placeholder="Password">
+                <input type="password" ng-model="model.password" placeholder="Password" onblur="isValid('password')" ng-class="{'input-invalid':modelError.password}">
             </label>
             <label>
-                <input type="password" placeholder="Re-enter Password">
+                <input type="password" ng-model="model.confirmPassword" placeholder="Re-enter Password" onblur="isValid('confirmPassword')" ng-class="{'input-invalid':modelError.confirmPassword}">
             </label>
             <div>
-                <input id="cb" class="signup-ckeckbox" type="checkbox" ng-model="model"/>
+                <input id="cb" class="signup-ckeckbox checkboxblue" type="checkbox" ng-model="isTermsAcepted"/>
                 <label for="cb" class="service-txt service-txt--signup">Agree to terms of Service</label>
             </div>
             <div class="signup-layout--btn">
-                <button class="btn" ng-disabled="!model.isTermsAcepted" ng-click="goToOwnerPage()">Next</button>
+                <button class="btn" ng-disabled="!isTermsAcepted" ng-click="signUp()">Next</button>
             </div>
         </form>
     </div>

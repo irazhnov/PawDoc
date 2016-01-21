@@ -128,12 +128,57 @@ angular
                 }
             }
         });
+        $stateProvider.state('main.thankYou',{
+            url: '/thankyou',
+            views: {
+                "main": {
+                    templateUrl: "templates/ThankYou.html",
+                    controller: 'ThankYouCtrl'
+                }
+            }
+        });
         $stateProvider.state('main.call',{
             url: '/call',
             views: {
                 "main": {
                     templateUrl: "templates/Call.html",
                     controller: 'CallCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.appointments',{
+            url: '/appointments',
+            views: {
+                "main": {
+                    templateUrl: "templates/Appointments.html",
+                    controller: 'AppointmentsCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.apptrequest',{
+            url: '/apptrequest',
+            views: {
+                "main": {
+                    templateUrl: "templates/AppointmentRequest.html",
+                    controller: 'ApptrequestCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.notifications',{
+            url: '/notifications',
+            views: {
+                "main": {
+                    templateUrl: "templates/Notifications.html",
+                    controller: 'NotificationsCtrl'
+                }
+            }
+        });
+        $stateProvider.state('main.settings',{
+            url: '/settings',
+            views: {
+                "main": {
+                    templateUrl: "templates/Settings.html",
+                    controller: 'SettingsCtrl'
                 }
             }
         });

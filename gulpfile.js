@@ -34,9 +34,13 @@ gulp.task('html', function() {
     return gulp.src('app/**/*.html')
         .pipe(gulp.dest('www'));
 });
+gulp.task('img', function() {
+    return gulp.src('app/images/*.*')
+        .pipe(gulp.dest('www/images'));
+});
 
 gulp.task('build', function(callback) {
-    runSequence('sass', ['cj', 'html' ,'cs'], callback);
+    runSequence('sass', ['cj', 'html' ,'cs', 'img'], callback);
 
 });
 

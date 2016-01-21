@@ -1,6 +1,15 @@
 @import 'variables'
+@import 'signup'
+@import 'menu'
 @import 'selectPet'
 @import 'welcome'
+@import 'payment'
+@import 'upload'
+@import 'thankyou'
+@import 'apptrequest'
+@import 'notifications'
+@import 'settings'
+
 
 
 
@@ -18,6 +27,48 @@ body
   width: 100%
   height: 100%
 
+.app-swipe
+  position: absolute
+  top: 0
+  width: 10%
+  height: 100%
+
+.page-swipe
+  //background-color: white
+  //transition-duration: 0.5s
+
+.main-container.ng-leave
+  z-index: 9988
+
+.main-container.ng-enter
+  z-index: 8888
+
+.page-swipe.ng-enter
+  -webkit-animation: slideInRight 0.5s both ease-out
+  //transform: translateX(100%)
+
+.page-swipe.ng-leave
+  -webkit-animation: slideOutLeft 0.5s both ease-out
+  //transform: translateX(100%)
+
+@keyframes slideInRight
+  from
+    transform: translateX(100%)
+  to
+    transform: translateX(0)
+
+@keyframes slideOutLeft
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-100%)
+
+.nomargins
+  margin: 0
+
+.nopaddings
+  padding: 0
+
 .layout-header
   background: linear-gradient(to bottom, $blue_gradient_top, $blue_gradient_bottom)
   height: 60px
@@ -27,6 +78,9 @@ body
 
 .layout--big-offset
   margin-top: 10%
+
+.input-invalid:invalid
+  border: 1px solid $orange
 
 .header-img
   right: 5px
@@ -41,7 +95,7 @@ body
 
 .header-img--menu-logo
   position: absolute
-  top: 20px
+  top: 17px
   left: 20px
   width: 40px
 
@@ -67,19 +121,6 @@ form input
   border-radius: 0
   outline: none !important
 
-input[type="checkbox"]
-  position: absolute
-  left: -9999px
-
-input[type="checkbox"] + label
-  background: url(../images/cb.gif) 0 0 no-repeat
-  background-position: 0 3px
-  padding: 3px 0 0 20px
-
-input[type="checkbox"]:checked + label
-  background-position: 0 -29px
-
-
 .input:focus
   -webkit-input-placeholder: $placeholder_gray
   //-webkit-tap-highlight-color:\ white !important
@@ -97,6 +138,7 @@ select
   color: $placeholder_gray
 
 .btn
+  font-size: 1.1em
   border-radius: 5px
   min-width: 25%
   margin: 20px 20px 0 20px
@@ -110,8 +152,11 @@ select
   min-width: 70%
   margin: 2% 20%
 
+.btn--middle
+  min-width: 50%
+
 .btn--small
-  font-size: 0.8em
+  font-size: 0.9em
   min-width: 20%
   margin: 5px
 
@@ -120,9 +165,9 @@ select
   height: 80px
   border-radius: 25px
 
-.btn-price span
+.btn-price span,
+.layout--block
   display: block
-
 
 .login-layout--btn
   width: 100%
@@ -175,7 +220,7 @@ select
 .service-txt--signup
   vertical-align: top
 
-.signup-ckeckbox
+.signup-checkbox
   width: auto
 
 .signup-layout--btn
@@ -189,13 +234,11 @@ select
 .btn--plus
   width: 80px
   height: 80px
-  border-radius: 10px
-  background-color: $dark_gray
 
 .title-layout
   padding-top: 20px
 
-.title-pet
+.title-orange
   display: block
   color: $orange
   font-size: 1.3em
@@ -203,55 +246,35 @@ select
 .txt-small-size
   font-size: 0.8em
 
+.txt-middle-size
+  font-size: 0.9em
+
 .txt-normal-size
   font-size: 1em
+
+.txt-xl-size
+  font-size: 1.4em
 
 .txt-color-light-gray
   color: $txt_light_gray
 
 .main-container
+  //position: absolute
+  width: 100%
   height: $main_height
   
-.menu-layout
-  left: -100%
-  height: $main_height
-  width: 100%
-  position: absolute
-  top: 60px
-  background: linear-gradient(to right, $blue_gradient_left, $blue_gradient_right)
-  transition-property: left
-  transition-duration: 0.5s
-
 .menu-layout--header
   height: 60px
   border-bottom: 1px solid white
 
-.menu-layout--item
-  height: 40px
-  border-bottom: 1px solid white
-  color: white
-  line-height: 2em
-  text-align: left
-
-.menu-item
-  padding-left: 35%
-  top: 5px
-  position: relative
-  font-size: 1.2em
-
-.menuOpened
-  transition-property: left
-  transition-duration: 0.5s
-  left: -30%
-
-.welcome-icons
+.menu-icons
   position: fixed
   display: inline-table
   padding: 0 1%
   bottom: 1%
   left: 0
 
-.welcome-icon-layout
+.menu-icons-layout
   padding: 1%
   width: 18%
 
@@ -321,14 +344,6 @@ select
   overflow-y: scroll
   height: 160px
 
-.upload-img
-  height: 100px
-  padding: 5px
-
-.upload-form--scroll
-  height : 250px
-  overflow-y: scroll
-
 .payment-form label
   padding-bottom: 5px
 
@@ -347,6 +362,17 @@ select
   border-radius: 15px
 
 .input-helper-layout
+  padding-top: 20px
+  height: 100%
   width: 100%
-  top: 0
-  position: relative
+  background-color: white
+  top: 60px
+  position: absolute
+
+.input-helper-text
+  width: 95%
+
+
+.appointment-img
+  padding: 30px 0
+  width: 45%

@@ -1,0 +1,33 @@
+<div class="title-layout">
+    <span class="service-txt">Please select method of payment and enter below</span>
+    <form class="layout--centered layout--left payment-form">
+        <label>
+            <select class="toll-input">
+                <option ng-selected="true">Select pet from drop down --></option>
+                <option ng-repeat="item in petsModel">{{item.moniker}}</option>
+            </select>
+        </label>
+        <label>
+            <input class="toll-input" placeholder="Your name">
+        </label>
+        <label>
+            <input class="toll-input" placeholder="Adress">
+        </label>
+        <div>
+            <input  class="toll-input" placeholder="Phone Number"/>
+        </div>
+        <div class="spacer">
+            <img class="appt-icon" src="images/appt.png">
+            <select  class="toll-input">
+                <option ng-selected="true">Select date & time --></option>
+            </select>
+        </div>
+
+
+
+    </form>
+    <div class="layout--centered btn--bottom">
+        <button class="btn btn-long" ng-click="goPricing()">Cancel</button>
+        <button class="btn btn-long" ng-click="goCall()">Submit</button>
+    </div>
+</div>

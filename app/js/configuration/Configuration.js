@@ -4,6 +4,8 @@ var AppConfig = (function (){
     var host='';
     return {
         name: 'PawDoc',
-        dependencies: ['routes', 'ngTouch']
+        dependencies: ['routes', 'ngTouch', 'ngAnimate'],
+        //dependencies: ['routes', 'ngTouch', 'ngAnimate', 'btford.socket-io'],
+        hostDev: 'http://api.pawdoc.altoros.com/api/'
     };
 })();

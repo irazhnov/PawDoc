@@ -2,8 +2,10 @@
     <div class="txt-placeholder--gray">
         <div class="title-format">
             <span class="txt--gray">Add Pet</span>
-            <div class="btn--plus"></div>
-            <div class="layout--top-offset">
+            <div ng-click="takePhoto(true);">
+                <img class="btn--plus" src="images/plus_icon.png">
+            </div>
+            <div class="layout--top-offset" ng-click="takePhoto();">
                 <img src="images/camera_icon.png">
                 <span class="service-txt--blue">Upload Photo</span>
             </div>

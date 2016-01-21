@@ -17,26 +17,38 @@ angular
                 uiService.showNotification('Image not loaded try again', 'long');
             })
         };
-        $scope.makeMovie = function (){
+        $scope.recordVideo = function (){
             successCapture = function (uri) {
                 console.log('uri[0].fullPath: ' + uri[0].fullPath);
-                uiService.uploadedDataModel.uploadedVideoUrl = uri[0].fullPath;
+                uiService.uploadedDataModel.uploadedVideoUrls.push({url:uri[0].fullPath});
             };
             errorCapture = function () {
                 console.log("capture Video error: "+JSON.stringify(e));
             };
             navigator.device.capture.captureVideo(successCapture, errorCapture, {limit: 1});
         };
-        $scope.getVideoFile = function () {
-            var promise = deviceService.getFile();
-            promise.then(function (videoURI){
-                console.log('video url ' + videoURI);
-                uiService.uploadedDataModel.uploadedVideoUrl = videoURI;
-            },function (err){
-                uiService.showNotification('Video not loaded try again', 'long');
-            })
+        $scope.playVideo = function (item) {
+            if(device.platform.toLowerCase() != 'ios')
+           VideoPlayer.play(item.url);
         };
-
+        $scope.getVideoFile = function () {
+            deviceService.getVideoFile();
+        };
+        $scope.playAudio = function (item) {
+           var media = new Media(item.url);
+            media.play();
+        };
+        $scope.getAudioFile = function () {
+            deviceService.getAudioFile();
+        };
+        $scope.startRecordAudio = function () {
+            uiService.uploadedDataModel.isRecordingAudio = true;
+            deviceService.startRecordAudio();
+        };
+        $scope.stopRecordAudio = function () {
+            uiService.uploadedDataModel.isRecordingAudio = false;
+            deviceService.stopRecordAudio();
+        };
         $scope.uploadedDataModel = uiService.uploadedDataModel;
         uiService.setHeaderTitle('Upload Information');
     });
