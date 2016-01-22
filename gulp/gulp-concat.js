@@ -14,5 +14,5 @@ module.exports = function(config, gulp, concat) {
 
     return gulp.src(scripts)
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest(config.WWW_PATH + 'js\\'));
+        .pipe(gulp.dest('www/js/'));
 };

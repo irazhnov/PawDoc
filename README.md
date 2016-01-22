@@ -21,5 +21,7 @@ cordova-plugin-chrome-apps-power
 Android
 cordova plugin add com.moust.cordova.videoplayer
 
+IOS
+npm install -g ios-sim
 
 INSTALATION

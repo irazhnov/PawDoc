@@ -14,6 +14,11 @@ angular
             templateUrl: "templates/Login.html",
             controller: 'LoginCtrl'
         });
+        $stateProvider.state('forgotlogin',{
+            url:'/forgotlogin',
+            templateUrl: "templates/ForgotLogin.html",
+            controller: 'ForgotLoginCtrl'
+        });
         $stateProvider.state('signup',{
             url: '/signup',
             templateUrl: "templates/Signup.html",
