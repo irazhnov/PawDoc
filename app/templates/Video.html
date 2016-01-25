@@ -1,6 +1,6 @@
 <div>
     <input ng-model="model.name">
-    <button class="btn" ng-click="login();">Login</button>
+    <button class="btn" ng-click="connect();">Login</button>
     <div ng-repeat="item in allContacts | filter:hideCurrentUsers()">
         <div ng-click="addContact(item)">ready to call: {{item}}</div>
     </div>

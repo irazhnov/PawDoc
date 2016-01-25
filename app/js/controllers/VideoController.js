@@ -30,10 +30,6 @@ angular
         signalingService.on('login_error', function (message) {
             $scope.loading = false;
             window.plugins.toast.show(message ,'long','center');
-            //var alertPopup = $ionicPopup.alert({
-            //    title: 'Error',
-            //    template: message
-            //});
         });
 
         signalingService.on('login_succesful', function (users) {
@@ -44,10 +40,6 @@ angular
 
         $scope.onlineUsers = contactsService.onlineUsers;
 
-        //if ($scope.isCalling) {
-        //    signalingService.emit('sendMessage', $stateParams.contactName, { type: 'call' });
-        //}
-
         $scope.ignore = function () {
             var contactNames = Object.keys($scope.contacts);
             if (contactNames.length > 0) {
@@ -55,7 +47,6 @@ angular
             } else {
                 signalingService.emit('sendMessage', $scope.contactName, { type: 'ignore' });
                 console.log('ignore:  $state.go(app.contacts');
-                //$state.go('app.contacts');
             }
             $scope.isWaitCall = true;
         };
@@ -91,14 +82,12 @@ angular
             console.log('cordova.plugins.phonertc.hideVideoView()');
             if($rootScope.deviceReady)
             cordova.plugins.phonertc.hideVideoView();
-            //$scope.selectContactModal.show();
         };
 
         $scope.closeSelectContactModal = function () {
             console.log('cordova.plugins.phonertc.showVideoView()');
             if($rootScope.deviceReady)
             cordova.plugins.phonertc.showVideoView();
-            //$scope.selectContactModal.hide();
         };
 
         $scope.addContact = function (newContact) {
@@ -107,7 +96,6 @@ angular
             signalingService.emit('sendMessage', newContact, { type: 'call' });
             if($rootScope.deviceReady)
             cordova.plugins.phonertc.showVideoView();
-            //$scope.selectContactModal.hide();
         };
 
         $scope.hideCurrentUsers = function () {

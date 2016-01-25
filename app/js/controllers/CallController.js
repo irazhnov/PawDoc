@@ -1,6 +1,6 @@
 angular
     .module(AppConfig.name)
-    .controller('CallCtrl', function ($scope, $state, $window, uiService) {
+    .controller('CallCtrl', function ($scope, $location, $window, uiService, signalingService) {
         $scope.goConfirmation= function () {
             $location.path('/main/payment');
         };
@@ -8,7 +8,7 @@ angular
             $location.path('/main/payment');
         };
         $scope.startVideoCall = function () {
-            $state.go('main.video');
+            $location.path('/main/video');
         };
         $scope.makeCall = function () {
             var bypassAppChooser = true;
