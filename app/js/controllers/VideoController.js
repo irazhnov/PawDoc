@@ -33,6 +33,7 @@ angular
         });
 
         signalingService.on('login_succesful', function (users) {
+            $scope.loading = false;
             contactsService.setOnlineUsers(users, $scope.model.name);
             console.log('signaling login_successful ' + $scope.model.name);
             //$state.go('app.contacts');
@@ -156,8 +157,8 @@ angular
                     $scope.isWaitCall = true;
                 }
                 if($rootScope.deviceReady) {
-                    AudioToggle.setAudioMode(AudioToggle.EARPIECE);
-                    chrome.power.releaseKeepAwake('display');
+                    //AudioToggle.setAudioMode(AudioToggle.EARPIECE);
+                    //chrome.power.releaseKeepAwake('display');
                 }
             });
 
@@ -172,7 +173,6 @@ angular
                 case 'call':
                     if ($scope.model.name === name) { return; }
 
-                    //$state.go('app.call', { isCalling: false, contactName: name });
                     $scope.contactName = name;
                     $scope.isWaitCall = false;
                     break;
@@ -207,17 +207,12 @@ angular
                         if (i > -1) {
                             $scope.hideFromContactList.splice(i, 1);
                         }
-                        if (Object.keys($scope.contacts).length === 0) {
-
-                            //$state.go('app.contacts');
-                        }
                     } else {
                         console.log('22   $state.go(app.contacts);');
-                        //$state.go('app.contacts');
                     }
                     if($rootScope.deviceReady) {
-                        AudioToggle.setAudioMode(AudioToggle.EARPIECE);
-                        chrome.power.releaseKeepAwake('display');
+                        //AudioToggle.setAudioMode(AudioToggle.EARPIECE);
+                        //chrome.power.releaseKeepAwake('display');
                     }
                     break;
                 case 'phonertc_handshake':
@@ -227,10 +222,10 @@ angular
                         $scope.contacts[name].receiveMessage(JSON.parse(message.data));
                         duplicateMessages.push(message.data);
                     }
-                    if($rootScope.deviceReady) {
-                        AudioToggle.setAudioMode(AudioToggle.SPEAKER);
-                        chrome.power.requestKeepAwake();
-                    }
+                    //if($rootScope.deviceReady) {
+                        //AudioToggle.setAudioMode(AudioToggle.SPEAKER);
+                        //chrome.power.requestKeepAwake();
+                    //}
                     break;
                 case 'add_to_group':
                     console.log('add_to_group');
@@ -257,5 +252,5 @@ angular
         $scope.$on('$destroy', function() {
             signalingService.removeListener('messageReceived', onMessageReceive);
         });
-        //uiService.setHeaderTitle('Video Conference');
+        uiService.setHeaderTitle('Video Conference');
     });

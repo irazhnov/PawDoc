@@ -27,11 +27,14 @@ body
   width: 100%
   height: 100%
 
+.app-overflow
+  overflow: hidden !important
+
 .app-swipe
   position: absolute
   top: 0
-  width: 20%
-  height: 100%
+  width: 10%
+  height: calc(100% - 80px)
 
 .page-swipe
   //background-color: white
@@ -45,11 +48,9 @@ body
 
 .page-swipe.ng-enter
   -webkit-animation: slideInRight 0.5s both ease-out
-  //transform: translateX(100%)
 
 .page-swipe.ng-leave
   -webkit-animation: slideOutLeft 0.5s both ease-out
-  //transform: translateX(100%)
 
 @keyframes slideInRight
   from
@@ -120,8 +121,6 @@ form input
 
 .input:focus
   -webkit-input-placeholder: $placeholder_gray
-  //-webkit-tap-highlight-color:\ white !important
-  //-webkit-focus-ring-color: white !important
   outline: none !important
 
 select
@@ -188,6 +187,7 @@ select
   padding-bottom: 15%
 
 .layout--centered
+  overflow: hidden
   margin-right: auto
   margin-left: auto
   text-align: center
@@ -224,8 +224,6 @@ select
 
 .btn--bottom
   width: 100%
-  position: fixed
-  bottom: 10px
 
 .btn--plus
   width: 80px
@@ -255,20 +253,19 @@ select
   color: $txt_light_gray
 
 .main-container
-  //position: absolute
   width: 100%
+  height: 100%
   height: $main_height
-  
+
+.container
+  height: calc(100% - 80px)
+
 .menu-layout--header
   height: 60px
   border-bottom: 1px solid white
 
 .menu-icons
-  position: fixed
   display: inline-table
-  padding: 0 1%
-  bottom: 1%
-  left: 0
 
 .menu-icons-layout
   padding: 1%

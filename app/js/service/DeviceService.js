@@ -48,13 +48,27 @@ angular
             return q.promise;
         };
         this.getVideoFile = function () {
-            var promise = self.getFile(['.mp4', '.avi','.mkv', '.h264']);
-            promise.then(function (videoURI){
-                console.log('video url ' + videoURI);
-                uiService.uploadedDataModel.uploadedVideoUrls.push({url:videoURI});
-            },function (err){
-                uiService.showNotification('Video not loaded try again', 'long');
-            })
+            if(device.platform.toLowerCase() === 'android') {
+                var promise = self.getFile(['.mp4', '.avi', '.mkv', '.h264']);
+                promise.then(function (videoURI) {
+                    console.log('video url ' + videoURI);
+                    uiService.uploadedDataModel.uploadedVideoUrls.push({url: videoURI});
+                }, function (err) {
+                    uiService.showNotification('Video not loaded try again', 'long');
+                })
+            }
+            if(device.platform.toLowerCase() === 'ios'){
+                var success= function (data) {
+                    alert(JSON.stringify(data));
+                    }
+                    , error = function (data) {
+                        console.log();
+                    };
+                    navigator.camera.getPicture(success, error, { quality: 50,
+                        destinationType: navigator.camera.DestinationType.FILE_URI,
+                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+                        mediaType: navigator.camera.MediaType.VIDEO});
+            }
         };
         this.getAudioFile = function () {
             var promise = self.getFile(['.mp3', '.wav', 'm4a', 'wma', '.amr']);
