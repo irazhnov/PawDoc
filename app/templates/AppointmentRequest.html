@@ -1,6 +1,6 @@
-<div class="title-layout">
+<div class="title-layout container">
     <span class="service-txt">Please select method of payment and enter below</span>
-    <form class="layout--centered layout--left payment-form">
+    <form class="layout--centered layout--left">
         <label>
             <select class="toll-input">
                 <option ng-selected="true">Select pet from drop down --></option>
@@ -22,12 +22,9 @@
                 <option ng-selected="true">Select date & time --></option>
             </select>
         </div>
-
-
-
     </form>
-    <div class="layout--centered btn--bottom">
-        <button class="btn btn-long" ng-click="goPricing()">Cancel</button>
-        <button class="btn btn-long" ng-click="goCall()">Submit</button>
-    </div>
+</div>
+<div class="layout--centered btn--bottom">
+    <button class="btn btn-long" ng-click="goPricing()">Cancel</button>
+    <button class="btn btn-long" ng-click="goCall()">Submit</button>
 </div>

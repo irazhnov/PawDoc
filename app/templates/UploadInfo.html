@@ -1,9 +1,9 @@
-<div class="title-layout">
+<div class="title-layout container">
     <span class="service-txt txt-normal-size">Upload Info related to your problem.</span>
     <form class="layout--centered layout--left">
         <div>
             <span class="txt-small-size">Picture of area of concern</span>
-            <input/>
+            <!--<input/>-->
             <div class="upload-form--scroll">
                 <div ng-repeat="item in uploadedDataModel.uploadedPictureUrls">
                     <img class="upload-img" ng-src="{{item.url}}">
@@ -32,7 +32,7 @@
         <div>
             <span class="txt-small-size upload-form--audio-title">Audio of area of concern</span>
             <div>
-                <div ng-repeat="item in uploadedDataModel.uploadedVideoUrls">
+                <div ng-repeat="item in uploadedDataModel.uploadedAudioUrls">
                     <!--<img class="upload-img" ng-src="{{item.url}}">-->
                     <div style="width: 50px;height: 50px; background-color: #004444;" ng-click="playAudio(item)"></div>
                 </div>
@@ -42,8 +42,8 @@
             <button  class="btn btn--small" ng-click="stopRecordAudio()" ng-show="uploadedDataModel.isRecordingAudio">Stop record</button>
         </div>
     </form>
-    <div class="layout--centered btn--bottom">
-        <button class="btn btn-long" ng-click="goMedicalHystory()">Previous</button>
-        <button class="btn btn-long" ng-click="goConfirmation()">Next</button>
-    </div>
+</div>
+<div class="layout--centered btn--bottom">
+    <button class="btn btn-long" ng-click="goMedicalHystory()">Previous</button>
+    <button class="btn btn-long" ng-click="goConfirmation()">Next</button>
 </div>

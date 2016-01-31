@@ -1,11 +1,11 @@
-<div class="settings-main-container title-layout">
+<div class="notification-container title-layout">
     <div ng-repeat="item in model">
         <div class="notification-label" ng-swipe-left="swipe()">
             <span>{{item.message}}</span>
         </div>
     </div>
-    <div class="settings-bottom ">
-        <button class="btn btn--middle notification-btn-bottom--offset">Sign up for Alerts</button>
-    </div>
-    <menu-icons></menu-icons>
 </div>
+<div class="settings-bottom">
+    <button class="btn btn--middle notification-btn-bottom--offset">Sign up for Alerts</button>
+</div>
+<menu-icons></menu-icons>

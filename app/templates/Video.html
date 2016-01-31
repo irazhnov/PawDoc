@@ -4,8 +4,8 @@
     <div ng-repeat="item in allContacts | filter:hideCurrentUsers()">
         <div ng-click="addContact(item)">ready to call: {{item}}</div>
     </div>
-    <div class="calling-container" ng-if="isWaitCall && !callInProgress">
-        <p>Calling to <span>{{ contactName }}</span>...</p>
+    <div class="calling-container" ng-if="loading || !callInProgress">
+        <p>Connecting to ...</p>
         <button class="btn" ng-click="ignore()">Nevermind</button>
     </div>
     <div class="calling-container" ng-if="!isWaitCall && !callInProgress">
