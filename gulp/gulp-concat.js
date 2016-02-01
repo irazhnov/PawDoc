@@ -9,7 +9,6 @@ module.exports = function(config, gulp, concat) {
         'node_modules/angular-touch/angular-touch.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-socket-io/socket.js',
-
         'app/js/configuration/*.js',
         'app/js/**/*.js',
         'app/js/*.js'
@@ -17,5 +16,5 @@ module.exports = function(config, gulp, concat) {
 
     return gulp.src(scripts)
         .pipe(concat('scripts.js'))
-        .pipe(gulp.dest(config.WWW_PATH + 'js\\'));
+        .pipe(gulp.dest('www/js/'));
 };

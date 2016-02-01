@@ -35,7 +35,7 @@ angular
             deviceService.getVideoFile();
         };
         $scope.playAudio = function (item) {
-           var media = new Media(item.src);
+           var media = new Media(item.url);
             media.play();
         };
         $scope.getAudioFile = function () {

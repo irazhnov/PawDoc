@@ -4,14 +4,12 @@
 @import 'selectPet'
 @import 'welcome'
 @import 'payment'
+@import 'upload'
 @import 'thankyou'
 @import 'apptrequest'
 @import 'notifications'
 @import 'settings'
 @import 'videoCall'
-
-
-
 
 @font-face
   font-family: sourceFont
@@ -36,7 +34,7 @@ body
   width: 10%
   height: calc(100% - 80px)
 
-.page-swipe
+//.page-swipe
   //background-color: white
   //transition-duration: 0.5s
 
@@ -79,6 +77,9 @@ body
 
 .layout--big-offset
   margin-top: 10%
+
+.input-invalid:invalid
+  border: 1px solid $orange
 
 .header-img
   right: 5px
@@ -134,6 +135,7 @@ select
   color: $placeholder_gray
 
 .btn
+  font-size: 1.1em
   border-radius: 5px
   min-width: 25%
   margin: 20px 20px 0 20px
@@ -151,7 +153,7 @@ select
   min-width: 50%
 
 .btn--small
-  font-size: 0.8em
+  font-size: 0.9em
   min-width: 20%
   margin: 5px
 
@@ -254,7 +256,6 @@ select
 
 .main-container
   width: 100%
-  height: 100%
   height: $main_height
 
 .container
@@ -338,14 +339,6 @@ select
   overflow-y: scroll
   height: 160px
 
-.upload-img
-  height: 100px
-  padding: 5px
-
-.upload-form--scroll
-  height : 250px
-  overflow-y: scroll
-
 .payment-form label
   padding-bottom: 5px
 
@@ -364,6 +357,17 @@ select
   border-radius: 15px
 
 .input-helper-layout
+  padding-top: 20px
+  height: 100%
   width: 100%
-  top: 0
-  position: relative
+  background-color: white
+  top: 60px
+  position: absolute
+
+.input-helper-text
+  width: 95%
+
+
+.appointment-img
+  padding: 30px 0
+  width: 45%

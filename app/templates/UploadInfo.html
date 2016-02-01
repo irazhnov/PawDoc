@@ -1,40 +1,31 @@
 <div class="title-layout container">
     <span class="service-txt txt-normal-size">Upload Info related to your problem.</span>
-    <form class="layout--centered layout--left">
+    <form class="layout--centered layout--left upload-form-layout">
         <div>
             <span class="txt-small-size">Picture of area of concern</span>
-            <!--<input/>-->
-            <div class="upload-form--scroll">
+            <div class="upload-form--inline">
                 <div ng-repeat="item in uploadedDataModel.uploadedPictureUrls">
                     <img class="upload-img" ng-src="{{item.url}}">
                 </div>
             </div>
-
             <button  class="btn btn--small" ng-click="takePhoto(true)">Take photo</button>
             <button  class="btn btn--small" ng-click="takePhoto()">Gallery</button>
         </div>
         <div>
             <span class="txt-small-size">Video of area of concern</span>
-            <div>
+            <div class="upload-form--inline">
                 <div ng-repeat="item in uploadedDataModel.uploadedVideoUrls">
-                    <!--<img class="upload-img" ng-src="{{item.url}}">-->
-                    <div style="width: 50px;height: 50px; background-color: #004444;" ng-click="playVideo(item)"></div>
+                    <img class="upload-img--video" src="images/video_icons.png" ng-click="playVideo(item)">
                 </div>
             </div>
-            <!--<div ng-if="uploadedDataModel.uploadedVideoUrls.length > 0">-->
-                <!--<video controls='controls' class="video-player">-->
-                    <!--<source ng-src="{{uploadedDataModel.uploadedVideoUrls}}" type='video/mp4'>-->
-                <!--</video>-->
-            <!--</div>-->
             <button  class="btn btn--small" ng-click="getVideoFile()">Upload Video</button>
             <button  class="btn btn--small" ng-click="recordVideo()">Record Video</button>
         </div>
         <div>
             <span class="txt-small-size upload-form--audio-title">Audio of area of concern</span>
-            <div>
+            <div class="upload-form--inline">
                 <div ng-repeat="item in uploadedDataModel.uploadedAudioUrls">
-                    <!--<img class="upload-img" ng-src="{{item.url}}">-->
-                    <div style="width: 50px;height: 50px; background-color: #004444;" ng-click="playAudio(item)"></div>
+                    <img class="upload-img--audio" src="images/audio_icons.png" ng-click="playAudio(item)">
                 </div>
             </div>
             <button  class="btn btn--small" ng-click="getAudioFile()">Upload Audio</button>

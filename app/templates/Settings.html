@@ -6,7 +6,7 @@
             <div class="settings-container">
                 <div class="settings-spacer">
                     <span>Stay logged On</span>
-                    <input id="longCheckbox" class="checkbox" type="checkbox">
+                    <input id="longCheckbox" class="checkbox" type="checkbox" ng-model="model.stayLogged" ng-change="toggleLogged()">
                     <label for="longCheckbox"></label>
                 </div>
                 <div class="layout--left txt-small-size">
@@ -20,29 +20,33 @@
                 </div>
                 <div class="notifications-block layout--left" ng-class="{makeanim:model.isNotificationSpoilerOpen}">
                     <span class="txt-middle-size">Notify of new alerts? case status changes? and any other messages I have set up.</span>
-                    <span class="layout--block">Get Notified By:</span>
-                    <div class="settings-spacer">
+                    <span class="title-layout layout--block">Get Notified By:</span>
+                    <div class="title-layout settings-spacer">
                         <span class="settings-spacer">Push Notification</span>
-                        <input id="longCheckbox1" class="checkbox" type="checkbox">
+                        <input id="longCheckbox1" class="checkbox" type="checkbox" ng-model="model.pushNotification" ng-click="togglePushNotifications()">
                         <label class="" for="longCheckbox1"></label>
                     </div>
-                    <span class="layout--block">Email</span>
-                    <input>
+                    <div class="title-layout">
+                        <span class="layout--block">Email</span>
+                        <input  ng-focus="setHelperModel('email')" ng-model="helperModel.email">
+                    </div>
                     <button class="btn btn--long">Add</button>
-                    <span class="layout--block">Text Message</span>
-                    <input>
+                    <div class="title-layout">
+                        <span class="layout--block">Text Message</span>
+                        <input ng-focus="setHelperModel('textMessage')" ng-model="helperModel.textMessage">
+                    </div>
                     <button class="btn btn--long">Add</button>
                 </div>
             </div>
-            <div >
+            <div>
                 <div class="settings-spacer settings-container">
                     <span class="settings-spacer">Change Password</span>
                     <img ng-class="{arrowrotated:model.isPasswordSpoilerOpen}" class="settings-arrow" src="images/left_icon.png" ng-click="togglePasswordSpoiler()">
                 </div>
                 <div class="password-block" ng-class="{makeanim:model.isPasswordSpoilerOpen}">
-                    <input class="toll-input" placeholder="Current Password">
-                    <input class="toll-input" placeholder="New Password">
-                    <input class="toll-input" placeholder="Re-Enter Password">
+                    <input class="toll-input" placeholder="Current Password" ng-focus="setHelperModel('currPasswordModel')" ng-model="helperModel.currPasswordModel">
+                    <input class="toll-input" placeholder="New Password" ng-focus="setHelperModel('newpassword')" ng-model="helperModel.newpassword">
+                    <input class="toll-input" placeholder="Re-Enter Password" ng-focus="setHelperModel('reenterpassword')" ng-model="helperModel.reenterpassword">
                 </div>
             </div>
         </div>
@@ -51,4 +55,5 @@
     <button class="btn btn--long nomargins" ng-click="goNewCase()">Save</button>
     <button class="btn btn--long nomargins" ng-click="goViewCase()">Cancel</button>
 </div>
+<input-helper ng-model="helperModel"></input-helper>
 <menu-icons></menu-icons>

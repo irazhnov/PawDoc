@@ -52,6 +52,9 @@ angular
                 var promise = self.getFile(['.mp4', '.avi', '.mkv', '.h264']);
                 promise.then(function (videoURI) {
                     console.log('video url ' + videoURI);
+                    if (uiService.uploadedDataModel.uploadedVideoUrls.length >3){
+                        uiService.uploadedDataModel.uploadedVideoUrls.shift();
+                    }
                     uiService.uploadedDataModel.uploadedVideoUrls.push({url: videoURI});
                 }, function (err) {
                     uiService.showNotification('Video not loaded try again', 'long');
@@ -74,6 +77,9 @@ angular
             var promise = self.getFile(['.mp3', '.wav', 'm4a', 'wma', '.amr']);
             promise.then(function (audioURI){
                 console.log('audio url ' + audioURI);
+                if (uiService.uploadedDataModel.uploadedAudioUrls.length >3){
+                    uiService.uploadedDataModel.uploadedAudioUrls.shift();
+                }
                 uiService.uploadedDataModel.uploadedAudioUrls.push({url:audioURI});
             },function (err){
                 uiService.showNotification('Audio not loaded try again', 'long');
@@ -81,7 +87,7 @@ angular
         };
         this.startRecordAudio = function () {
             console.log('startRecordAudio');
-            var src = device.platform.toLowerCase() == 'ios' ? 'note.wav' : 'note.amr'
+            var src = device.platform.toLowerCase() == 'ios' ? new Date().getTime() + '.wav' : new Date().getTime() +'.amr'
                 , success = function (){
                     console.log("recordAudio():Audio Success");
             }

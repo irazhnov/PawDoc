@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' 'self' file:;style-src 'self' 'unsafe-inline';font-src *;media-src * 'self' file:;img-src * 'unsafe-inline' 'unsafe-eval' 'self' file:;">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <title>PawDoc</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="HandheldFriendly" content="True">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+
+        <!--<script src="http://jsconsole.com/remote.js?paw"></script>-->
+    </head>
+    <body ng-app="PawDoc" ondragstart="return false" onselectstart="return false">
+        <ng-view ui-view class="full-wh"></ng-view>
+        <div class="clearfix"></div>
+    </body>
+</html>

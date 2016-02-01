@@ -1,14 +1,21 @@
 angular
     .module(AppConfig.name)
-    .controller('LoginCtrl', function ($scope, $location, $state) {
+    .controller('LoginCtrl', function ($scope, $location, restService, userModel) {
         var self= this;
         $scope.goSignup = function () {
-            //$state.go('main.call');
-            $location.path('/signup')
+            $location.path('/signup');
         };
-        $scope.goAddpet = function () {
-            $location.path('/main/addpet')
+        $scope.login = function () {
+            return;
+            var data = "grant_type=password&username=" + userModel.username + "&password=" + userModel.password;
+           restService.postRequest(AppConfig.hostDev + 'account/oauth/token', data)
+               .success(function (data) {
+                   console.log('');
+
+               })
+               .error(function (data){});
         };
+        $scope.model = userModel;
     // /[;,"?<>{}&^%$@!*.#_']/.test(''));
     //     [A-Za-z0-9]
     });

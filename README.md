@@ -15,9 +15,13 @@ cordova-plugin-whitelist 1.2.0 "Whitelist"
 cordova-plugin-x-toast 2.3.1 "Toast"
 mx.ferreyra.callnumber 0.0.2 "Cordova Call Number Plugin"
 cordova-plugin-media
+com.dooble.audiotoggle
+cordova-plugin-chrome-apps-power
 
 Android
 cordova plugin add com.moust.cordova.videoplayer
 
+IOS
+npm install -g ios-sim
 
 INSTALATION

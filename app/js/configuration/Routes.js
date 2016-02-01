@@ -1,8 +1,6 @@
 angular
     .module('routes', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider) {
-
-
         $stateProvider.state('start',{
             url:'/',
             templateUrl: "templates/Start.html",
@@ -13,6 +11,11 @@ angular
             url:'/login',
             templateUrl: "templates/Login.html",
             controller: 'LoginCtrl'
+        });
+        $stateProvider.state('forgotlogin',{
+            url:'/forgotlogin',
+            templateUrl: "templates/ForgotLogin.html",
+            controller: 'ForgotLoginCtrl'
         });
         $stateProvider.state('signup',{
             url: '/signup',

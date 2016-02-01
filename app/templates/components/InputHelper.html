@@ -1,0 +1,7 @@
+<div class="input-helper-layout" ng-if="model.inFocus">
+    <textarea autofocus class="input-helper-text" rows="3" ng-model="model[model.propertyName]"></textarea>
+    <div>
+        <button class="btn" ng-click="model[model.propertyName] = ''; model.inFocus = false;">Cancel</button>
+        <button class="btn" ng-click="model.inFocus = false;">Submit</button>
+    </div>
+</div>
