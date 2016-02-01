@@ -5,19 +5,20 @@ angular
         return {
             isTermsAcepted:true,
             invalidateReason:'',
-            signupModel: {
-                userName:'test',
-                firstName:'test',
-                lastName:'test',
-                password: 'Test1!',
-                confirmPassword:'Test1!',
-                country:{
-                    id: 1,
-                    name: 'sample string 2'
-                },
-                email:'irazhnov@gmail.com',
-                dateOfBirth: new Date().toISOString()//'1905-03-12T21:00:00.000Z'
-            },
+            signupModel: {},
+            //signupModel: {
+            //    userName:'test',
+            //    firstName:'test',
+            //    lastName:'test',
+            //    password: 'Test1!',
+            //    confirmPassword:'Test1!',
+            //    country:{
+            //        id: 1,
+            //        name: 'sample string 2'
+            //    },
+            //    email:'irazhnov@gmail.com',
+            //    dateOfBirth: new Date().toISOString()//'1905-03-12T21:00:00.000Z'
+            //},
 
         //{
         //    "email": "sample string 1",

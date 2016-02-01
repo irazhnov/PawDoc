@@ -6,6 +6,7 @@ angular
             $location.path('/signup');
         };
         $scope.login = function () {
+            $location.path('main/addpet');
             return;
             var data = "grant_type=password&username=" + userModel.username + "&password=" + userModel.password;
            restService.postRequest(AppConfig.hostDev + 'account/oauth/token', data)
