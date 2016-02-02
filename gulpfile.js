@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    notify = require('gulp-notify'),
     rename = require('gulp-rename');
     uglify = require('gulp-uglify'),
     runSequence = require('gulp-run-sequence'),
@@ -13,7 +12,8 @@ var gulp = require('gulp'),
     gulpConcat = require('./gulp/gulp-concat'),
     gulpMinifyJs = require('./gulp/gulp-minify-js'),
     gulpMinifyCss = require('./gulp/gulp-minify-css'),
-    gulpMinifyHtml = require('./gulp/gulp-minify-html');
+    gulpMinifyHtml = require('./gulp/gulp-minify-html'),
+    gulpMinifyImg = require('./gulp/gulp-minify-img');
 
 gulp.task('sass', function() {
     return gulpSassTask(config, gulp, sass);
@@ -41,10 +41,14 @@ gulp.task('minhtml', function (){
     gulpMinifyHtml(gulp);
 });
 
-//gulp.task('html', function() {
-//    return gulp.src('app/**/*.html')
-//        .pipe(gulp.dest('www'));
-//});
+gulp.task('minimg', function (){
+    gulpMinifyImg(gulp);
+});
+
+gulp.task('html', function() {
+    return gulp.src('app/**/*.html')
+        .pipe(gulp.dest('www'));
+});
 
 gulp.task('img', function() {
     return gulp.src('app/images/*.*')
@@ -52,7 +56,8 @@ gulp.task('img', function() {
 });
 
 gulp.task('build', function(callback) {
-    runSequence('sass', ['cj', 'cs', 'img', 'mincss', 'minjs', 'minhtml'], callback);
+    //runSequence('sass', ['cj', 'cs', 'img','html'], callback);
+    runSequence('sass', 'cj', 'cs', ['minjs', 'mincss', 'minhtml', 'minimg'], callback);
 
 });
 
