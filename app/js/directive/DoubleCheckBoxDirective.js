@@ -17,9 +17,9 @@ angular
                   linkedProp : false//
                 };
                 $scope.toggleCheckBox = function () {
-                    $scope.model.linkedProp = $scope.model.linkedProp;
+                    //$scope.model.linkedProp = !$scope.model.linkedProp;
                     $scope.model.selected = !$scope.model.selected;
                 };
             }
-        }
+        };
     }]);

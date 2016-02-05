@@ -6,8 +6,8 @@ angular
                 isPasswordSpoilerOpen: false,
                 stayLogged: true,
                 pushNotification: true
-            }
-          , helperModel = {
+            },
+            helperModel = {
                 propertyName:'',
                 inFocus:false,
                 textMessage:'',
@@ -46,16 +46,16 @@ angular
         //TODO move logic to restore data during start app
         setFromStorage = function () {
 
-            if(storageService.readString('isNotificationSpoilerOpen') != null) {
+            if(storageService.readString('isNotificationSpoilerOpen') !== null) {
                 model.isNotificationSpoilerOpen = storageService.readString('isNotificationSpoilerOpen') == 'true';
             }
-            if(storageService.readString('isPasswordSpoilerOpen') != null) {
+            if(storageService.readString('isPasswordSpoilerOpen') !== null) {
                 model.isPasswordSpoilerOpen = storageService.readString('isPasswordSpoilerOpen') == 'true';
             }
-            if(storageService.readString('stayLogged') != null) {
+            if(storageService.readString('stayLogged') !== null) {
                 model.stayLogged = storageService.readString('stayLogged') == 'true';
             }
-            if(storageService.readString('pushNotification') != null) {
+            if(storageService.readString('pushNotification') !== null) {
                 model.pushNotification = storageService.readString('pushNotification') == 'true';
             }
         };

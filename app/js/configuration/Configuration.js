@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var AppConfig = (function (){
     var host='';

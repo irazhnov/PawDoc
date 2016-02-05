@@ -12,5 +12,5 @@ angular
             putRequest: function(host, data) {
                 return $http.put(host, data);
             }
-        }
+        };
     }]);

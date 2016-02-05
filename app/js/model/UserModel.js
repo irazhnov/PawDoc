@@ -7,5 +7,5 @@ angular
             //username:'SuperPowerUser',
             //password:'MySuperP@ssword!',
             token:''
-        }
+        };
     });

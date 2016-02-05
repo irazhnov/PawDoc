@@ -25,3 +25,14 @@ IOS
 npm install -g ios-sim
 
 INSTALATION
+
+
+WARNING
+conflict between plugins 
+com.maginsoft.mfilechooser and
+phonegap-plugin-barcodescanner
+write data to the same file
+\platforms\android\res\values\colors.xml
+duplicate in manifest 
+<uses-feature android:name="android.hardware.camera" />
+

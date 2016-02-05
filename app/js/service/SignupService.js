@@ -38,7 +38,7 @@ angular
         //}
             isValid: function () {
                 var result = true;
-                if (this.signupModel.userName.length == 0 || this.signupModel.password.length== 0 || this.signupModel.confirmPassword.length== 0) {
+                if (this.signupModel.userName.length === 0 || this.signupModel.password.length === 0 || this.signupModel.confirmPassword.length === 0) {
                     window.plugins.toast.show('' ,'long','center');
                     return false;
                 }
@@ -69,5 +69,5 @@ angular
                         console.log(error);
                     });
             }
-        }
+        };
     }]);

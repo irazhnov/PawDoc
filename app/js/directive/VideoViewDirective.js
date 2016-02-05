@@ -19,5 +19,5 @@ angular.module(AppConfig.name)
                 $timeout(updatePosition, 500);
                 $rootScope.$on('videoView.updatePosition', updatePosition);
             }
-        }
+        };
     });

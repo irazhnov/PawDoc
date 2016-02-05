@@ -5,5 +5,5 @@ angular
             $location.path('/main/welcome');
         };
 
-        uiService.uiModel.headerTitle = 'Owner Information'
+        uiService.uiModel.headerTitle = 'Owner Information';
     });

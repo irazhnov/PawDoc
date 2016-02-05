@@ -11,7 +11,7 @@ angular
                 },
                 readArray: function(name) {
                     var stored = localStorage.getItem(name);
-                    if(stored === null || stored.length == 0) {
+                    if(stored === null || stored.length === 0) {
                         localStorage.setItem(name, JSON.stringify([]));
                         return [];
                     }
@@ -39,7 +39,7 @@ angular
                     localStorage.setItem(name,JSON.stringify(arr));
                 },
                 write: function(name,value) {
-                    localStorage.setItem(name,value)
+                    localStorage.setItem(name,value);
                 },
                 remove: function(key) {
                     localStorage.removeItem(key);

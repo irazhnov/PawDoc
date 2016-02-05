@@ -17,4 +17,4 @@ angular
         $scope.model = userModel;
         // /[;,"?<>{}&^%$@!*.#_']/.test(''));
         //     [A-Za-z0-9]
-    })
+    });

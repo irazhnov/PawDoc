@@ -13,5 +13,5 @@ angular
                 };
                 $scope.headerModel = uiService.uiModel;
             }
-        }
+        };
     }]);

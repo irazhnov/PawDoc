@@ -8,7 +8,7 @@ angular
                 uiService.uploadedDataModel.uploadedPictureUrls.push({url: imageURI});
             },function (err){
                 uiService.showNotification('Image not loaded try again', 'long');
-            })
+            });
         };
         $scope.goSelectPet = function () {
             $location.path('/main/selectpet');

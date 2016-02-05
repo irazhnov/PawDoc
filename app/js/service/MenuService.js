@@ -1,8 +1,8 @@
 angular
     .module(AppConfig.name)
     .service('menuService',[function () {
-        var self = this
-            , menuModel = {
+        var self = this,
+            menuModel = {
                 isOpen:false,
                 items: [
                 {title:'My Account', url:'main/welcome'},
@@ -22,5 +22,5 @@ angular
             toggleMenu: function () {
                 menuModel.isOpen = !menuModel.isOpen;
             }
-        }
+        };
     }]);

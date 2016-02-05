@@ -8,7 +8,6 @@ angular
             $location.path('/main/payment');
         };
         $scope.startVideoCall = function () {
-            return;
             $location.path('/main/video');
         };
         $scope.makeCall = function () {

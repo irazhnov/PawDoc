@@ -30,11 +30,11 @@ angular
                 var reason = '';
                 switch (field) {
                     case 'firstName':
-                        this.error[field] = this.data[field].length == 0;
+                        this.error[field] = this.data[field].length === 0;
                         reason += 'First name is empty.\n';
                         break;
                     case 'lastName':
-                        this.error[field] = this.data[field].length == 0;
+                        this.error[field] = this.data[field].length === 0;
                         reason += 'Last name is empty.\n';
                         break;
                     case 'password':
@@ -69,5 +69,5 @@ angular
                     this.error[key] = false;
                 }
             }
-        }
+        };
     });

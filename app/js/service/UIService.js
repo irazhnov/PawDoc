@@ -29,6 +29,6 @@ angular
             },
             showNotification : function(type , duration) {
                 window.plugins.toast.show(type ,duration ? duration : 'short','center');
-        }
-        }
+            }
+        };
     }]);

@@ -14,7 +14,7 @@ angular
                     $scope.clickHandle = function () {
                         model[model.propertyName] = '';
                         model.inFocus = false;
-                    }
+                    };
                 },
                 link: function($scope, element) {
                     //document.addEventListener('native.keyboardshow', function (e) {

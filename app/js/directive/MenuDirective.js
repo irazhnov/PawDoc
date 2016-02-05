@@ -12,5 +12,5 @@ angular
                    $location.path(value.url);
                };
            }
-       }
+       };
     }]);

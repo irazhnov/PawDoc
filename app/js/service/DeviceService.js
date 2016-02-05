@@ -1,8 +1,8 @@
 angular
     .module(AppConfig.name)
     .service('deviceService',['$q', '$window', '$location', 'uiService', function ($q, $window, $location, uiService){
-        var self = this
-            , audio;
+        var self = this,
+            audio;
             this.device = {
             screen : {
                 width: window.innerWidth,
@@ -58,13 +58,13 @@ angular
                     uiService.uploadedDataModel.uploadedVideoUrls.push({url: videoURI});
                 }, function (err) {
                     uiService.showNotification('Video not loaded try again', 'long');
-                })
+                });
             }
             if(device.platform.toLowerCase() === 'ios'){
                 var success= function (data) {
                     alert(JSON.stringify(data));
-                    }
-                    , error = function (data) {
+                    },
+                    error = function (data) {
                         console.log();
                     };
                     navigator.camera.getPicture(success, error, { quality: 50,
@@ -83,15 +83,15 @@ angular
                 uiService.uploadedDataModel.uploadedAudioUrls.push({url:audioURI});
             },function (err){
                 uiService.showNotification('Audio not loaded try again', 'long');
-            })
+            });
         };
         this.startRecordAudio = function () {
             console.log('startRecordAudio');
-            var src = device.platform.toLowerCase() == 'ios' ? new Date().getTime() + '.wav' : new Date().getTime() +'.amr'
-                , success = function (){
+            var src = device.platform.toLowerCase() == 'ios' ? new Date().getTime() + '.wav' : new Date().getTime() +'.amr',
+                success = function (){
                     console.log("recordAudio():Audio Success");
-            }
-                , error = function (err) {
+                },
+                error = function (err) {
                     console.log('Audio not recorded try again' + err.code);
                     uiService.showNotification('Audio not recorded try again' + err.code, 'long');
                 };

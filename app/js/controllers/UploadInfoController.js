@@ -15,7 +15,7 @@ angular
                 //uiService.uploadedDataModel.push({url: 'data:image/jpeg;base64,' +  imageURI});
             },function (err){
                 uiService.showNotification('Image not loaded try again', 'long');
-            })
+            });
         };
         $scope.recordVideo = function (){
             successCapture = function (uri) {
