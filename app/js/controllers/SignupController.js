@@ -4,6 +4,7 @@ angular
         var self = this;
         $scope.signUp = function () {
             //signupService.signUp()
+            $location.path("/login");
         };
         self.isValid = function (field) {
             signupModel.isValid(field);

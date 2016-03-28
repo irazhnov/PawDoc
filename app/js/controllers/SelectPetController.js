@@ -8,6 +8,9 @@ angular
             uiService.currentPet = value;
             $location.path('main/welcome');
         };
+        $scope.goAddPet = function () {
+            $location.path('/main/selectpet');
+        };
         $scope.pets = uiService.petsModel.pets;
         uiService.setHeaderTitle('Select Pet');
     });

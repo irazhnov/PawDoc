@@ -18,7 +18,7 @@ angular
             var q = $q.defer(),
                 options = {
                     quality : 70,
-                    destinationType : params.dataUrl ? Camera.DestinationType.DATA_URL : Camera.DestinationType.FILE_URI,
+                    destinationType : Camera.DestinationType.FILE_URI,
                     sourceType : isCamera ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.SAVEDPHOTOALBUM,
                     allowEdit : device.platform.toLowerCase() == 'ios',
                     encodingType: Camera.EncodingType.JPEG,
@@ -27,6 +27,7 @@ angular
                     saveToPhotoAlbum: false
                 };
             navigator.camera.getPicture(function(result) {
+                //callback(result);
                 q.resolve(result);
             }, function(err) {
                 q.reject(err);
@@ -39,7 +40,6 @@ angular
             if(device.platform.toLowerCase() !== 'ios') {
                 console.log('open');
                 $window.plugins.mfilechooser.open(extensions, function (uri) {
-                    //callback(uri);
                     q.resolve(uri);
                 }, function (error) {
                     q.reject(error);
@@ -47,7 +47,7 @@ angular
             }
             return q.promise;
         };
-        this.getVideoFile = function () {
+        this.getVideoFile = function (callback) {
             if(device.platform.toLowerCase() === 'android') {
                 var promise = self.getFile(['.mp4', '.avi', '.mkv', '.h264']);
                 promise.then(function (videoURI) {
@@ -56,6 +56,7 @@ angular
                         uiService.uploadedDataModel.uploadedVideoUrls.shift();
                     }
                     uiService.uploadedDataModel.uploadedVideoUrls.push({url: videoURI});
+                    callback();
                 }, function (err) {
                     uiService.showNotification('Video not loaded try again', 'long');
                 });
@@ -73,7 +74,7 @@ angular
                         mediaType: navigator.camera.MediaType.VIDEO});
             }
         };
-        this.getAudioFile = function () {
+        this.getAudioFile = function (callback) {
             var promise = self.getFile(['.mp3', '.wav', 'm4a', 'wma', '.amr']);
             promise.then(function (audioURI){
                 console.log('audio url ' + audioURI);
@@ -81,6 +82,7 @@ angular
                     uiService.uploadedDataModel.uploadedAudioUrls.shift();
                 }
                 uiService.uploadedDataModel.uploadedAudioUrls.push({url:audioURI});
+                callback();
             },function (err){
                 uiService.showNotification('Audio not loaded try again', 'long');
             });
@@ -101,6 +103,11 @@ angular
         this.stopRecordAudio = function () {
             console.log('audio.src: ' + audio.src);
             audio.stopRecord();
+            if (uiService.uploadedDataModel.uploadedAudioUrls.length >3){
+                uiService.uploadedDataModel.uploadedAudioUrls.shift();
+            }
+            uiService.uploadedDataModel.uploadedAudioUrls.push({url:audioURI});
+            callback();
         };
         this.onBackKeyDown = function () {
             console.log('onBackKeyDown' + $location.path());

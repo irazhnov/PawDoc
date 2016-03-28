@@ -11,14 +11,7 @@ angular
             $location.path('/main/video');
         };
         $scope.makeCall = function () {
-            var bypassAppChooser = true;
-            onSuccess = function (data) {
-                console.log('onSuccess Call');
-            };
-            onError = function (error) {
-              console.log('ERROR makeCall');
-            };
-            $window.plugins.CallNumber.callNumber(onSuccess, onError, uiService.uiModel.callNumber, bypassAppChooser);
+            document.location.href = "tel:" + uiService.uiModel.callNumber;
         };
         $scope.uiModel = uiService.uiModel;
         // disconnect socket from server

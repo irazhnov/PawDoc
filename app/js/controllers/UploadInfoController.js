@@ -21,6 +21,7 @@ angular
             successCapture = function (uri) {
                 console.log('uri[0].fullPath: ' + uri[0].fullPath);
                 uiService.uploadedDataModel.uploadedVideoUrls.push({url:uri[0].fullPath});
+                $scope.$apply();
             };
             errorCapture = function () {
                 console.log("capture Video error: "+JSON.stringify(e));
@@ -32,14 +33,18 @@ angular
            VideoPlayer.play(item.url);
         };
         $scope.getVideoFile = function () {
-            deviceService.getVideoFile();
+            deviceService.getVideoFile(function(){
+                $scope.$apply();
+            });
         };
         $scope.playAudio = function (item) {
            var media = new Media(item.url);
             media.play();
         };
         $scope.getAudioFile = function () {
-            deviceService.getAudioFile();
+            deviceService.getAudioFile(function (){
+                $scope.apply();
+            });
         };
         $scope.startRecordAudio = function () {
             uiService.uploadedDataModel.isRecordingAudio = true;
@@ -47,7 +52,9 @@ angular
         };
         $scope.stopRecordAudio = function () {
             uiService.uploadedDataModel.isRecordingAudio = false;
-            deviceService.stopRecordAudio();
+            deviceService.stopRecordAudio(function () {
+                $scope.apply();
+            });
         };
         $scope.uploadedDataModel = uiService.uploadedDataModel;
         uiService.setHeaderTitle('Upload Information');

@@ -15,7 +15,8 @@ angular
             },
             petsModel: {
               pets: [
-                  {url:"../www/images/mockup/kona.jpg", moniker: 'Kona'},
+                  {url:"../www/images/mockup/kona.jpg", moniker: 'Kona',
+                  name: 'Peter', age: 3, species:'dog', breed: 'spaniel', gender:'boy', spreyed: true, cases:{}},
                   {url:"../www/images/mockup/kona.jpg", moniker: 'Barnaby'},
                   {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'},
                   {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'},
@@ -23,6 +24,12 @@ angular
                   {url:"../www/images/mockup/kona.jpg", moniker: 'Mr.Schrinkles'}
               ]
             },
+            case: {
+                problem:'',
+                location:'',
+
+            },
+            currentCase:{},
             currentPet: {},
             setHeaderTitle : function (value) {
                 this.uiModel.headerTitle = value;
