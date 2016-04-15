@@ -43,7 +43,7 @@ angular
         };
         $scope.getAudioFile = function () {
             deviceService.getAudioFile(function (){
-                $scope.apply();
+                $scope.$apply();
             });
         };
         $scope.startRecordAudio = function () {
@@ -53,7 +53,7 @@ angular
         $scope.stopRecordAudio = function () {
             uiService.uploadedDataModel.isRecordingAudio = false;
             deviceService.stopRecordAudio(function () {
-                $scope.apply();
+                $scope.$apply();
             });
         };
         $scope.uploadedDataModel = uiService.uploadedDataModel;
