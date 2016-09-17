@@ -21,14 +21,40 @@ angular
         };
 
         setFormatsList();
+
         $scope.$watchCollection("selected", function (selected) {
-            if(!Object.keys(selected).length>0){
-                return;
-            }
-            console.log("selected");
-        var keys = Object.keys(selected);
-            _.forEach($scope.timeStampFormatsList, function(formats){
-                formats.splice(0,1);
-            });
+          if(!Object.keys(selected).length>0){
+              return;
+          }
+          console.log("selected");
+
+          clearSelected(selected);
         });
+
+      var clearSelected = function(selected) {
+
+        var keys = Object.keys(selected);
+          _.forEach($scope.timeStampFormatsList, function(formats, formatIndex){
+            for(key in selected) {
+              if (formatIndex != key) {
+                var indexToRemove;
+                _.forEach(formats, function(item, index){
+
+                  if(item.formatLabel == selected[key]){
+                    indexToRemove = index;
+                  }
+                });
+                if(indexToRemove>= 0)
+                formats.splice(indexToRemove,1);
+              }
+
+
+            }
+        });
+
+        _.forEach($scope.timeStampFormatsList, function(formats){
+
+            //formats.splice(0,1);
+        });
+      }
     });
