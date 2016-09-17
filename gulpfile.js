@@ -76,9 +76,9 @@ gulp.task('img', function() {
 
 
 gulp.task('build', function(callback) {
-    //runSequence('sass', ['cj', 'cs', 'img','html'], callback);
+    runSequence('sass', ['cj', 'cs', 'img','html'], callback);
     //runSequence('sass', 'cj', 'cs', ['minjs', 'mincss', 'minhtml', 'minimg'], callback);
-    runSequence('sass', 'cj', 'cs', ['minjs', 'mincss', 'minhtml'], callback);
+    //runSequence('sass', 'cj', 'cs', ['minjs', 'mincss', 'minhtml'], callback);
 
 });
 

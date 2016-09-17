@@ -6,4 +6,18 @@
         <button class="btn btn--middle" ng-click="goToWelcome();">Return Home</button>
     </div>
 </div>
+
+<select ng-model="selectedItem">
+    <option ng-repeat="item in timeStampFormats">item.formatLabel</option>
+</select>
+
+
+
+<label>!!</label>
+<!--<div ng-repeat="timeStampFormatItem in timeStampFormatsList">-->
+<!--<select ng-model="selected">-->
+<!--<option ng-repeat="item in timeStampFormatItem track by $index">item.formatLabel</option>-->
+<!--</select>-->
+<!--</div>-->
+
 <menu-icons></menu-icons>

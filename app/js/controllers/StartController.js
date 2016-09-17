@@ -1,8 +1,10 @@
 angular
     .module(AppConfig.name)
+    .constant('_', window._)
     .controller('StartCtrl', function ($scope, $rootScope, $location, deviceService, generalService) {
-        //$location.path("/login");
+        $location.path("/test");
         var self= this;
+        return;
             document.addEventListener('deviceready', function() {
             navigator.splashscreen.hide();
             $rootScope.deviceReady = true;

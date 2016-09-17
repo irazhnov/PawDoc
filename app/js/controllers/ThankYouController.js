@@ -9,4 +9,6 @@ angular
         };
         //$scope.pet = uiService.currentPet;
         uiService.setHeaderTitle('Thank You!');
+
+
     });

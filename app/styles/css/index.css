@@ -1,0 +1,703 @@
+.checkboxblue {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkboxblue + label {
+  background: url(../images/cb.gif) 0 0 no-repeat;
+  background-position: 0 3px;
+  padding: 3px 0 0 20px;
+}
+
+.checkboxblue:checked + label {
+  background-position: 0 -29px;
+}
+
+.menu-layout {
+  left: -100%;
+  height: calc(100% - 60px);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  background: linear-gradient(to right, #1d7ebd, #04689d);
+  transition-duration: 0.5s;
+}
+
+.menu-layout--item {
+  height: 40px;
+  border-bottom: 1px solid white;
+  color: white;
+  line-height: 2em;
+  text-align: left;
+}
+
+.menu-item {
+  padding-left: 35%;
+  top: 5px;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.menuOpened {
+  transform: translateX(70%);
+}
+
+.selectpet-list--scroll {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.selectpet-item {
+  height: 80px;
+  width: 80%;
+  display: -webkit-box;
+  margin-left: 30px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.selectpet-img {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.selectpet-title {
+  color: #0071bc;
+}
+
+.welcome-img {
+  max-height: 150px;
+  max-width: 50%;
+  margin-bottom: 10px;
+}
+
+.welcome-btn--inline {
+  display: inline-block;
+}
+
+.payment-checkbox {
+  position: absolute;
+  left: -9999px;
+}
+
+.payment-checkbox + label {
+  background: url(../images/cb.gif) 0 0 no-repeat;
+  background-position: 0 3px;
+  padding: 3px 0 0 20px;
+}
+
+.payment-checkbox:checked + label {
+  background-position: 0 -29px;
+}
+
+.upload-form--audio-title {
+  display: block;
+}
+
+.upload-form-layout {
+  max-height: 80%;
+}
+
+.upload-img,
+.upload-img--video {
+  height: 100px;
+  padding: 5px;
+  background-color: white;
+}
+
+.upload-img--video,
+.upload-img--audio {
+  height: 50px;
+  padding: 10px;
+}
+
+.upload-form--inline {
+  display: -webkit-box;
+  overflow-x: auto;
+}
+
+.thankyou-service-txt {
+  padding: 30% 5% 0;
+}
+
+.appt-icon {
+  width: 80px;
+}
+
+.appt-main-container {
+  height: calc(100% - 150px);
+  overflow-y: scroll;
+}
+
+.notification-label {
+  margin: 0 2%;
+  color: #f05a22;
+  line-height: 3em;
+  border-bottom: 2px solid #b3b3b3;
+}
+
+.notification-btn-bottom--offset {
+  margin-bottom: 20px !important;
+}
+
+.notification-container {
+  height: calc(100% - 170px);
+  overflow-y: scroll;
+}
+
+.checkbox {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox:not(checked) + label:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 35px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.checkbox:checked + label:after {
+  left: 15px;
+}
+
+.checkbox:checked + label:before {
+  background: #3ff900;
+}
+
+.checkbox:not(checked) + label:after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #FFF;
+  border: 1px solid #ccc;
+  transition: all 0.2s;
+}
+
+.checkbox:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 60px;
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-main-container {
+  height: calc(100% - 175px);
+  overflow-y: scroll;
+}
+
+.settings-spacer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-service-txt {
+  color: #29abe2;
+  padding-left: 10%;
+}
+
+.settings-container {
+  border-bottom: 1px solid #f4f4f4;
+  padding: 10px 0;
+}
+
+.notifications-block {
+  height: 270px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.password-block {
+  padding: 0 5px 0 0;
+  height: 130px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.makeanim {
+  height: 0;
+}
+
+.animheader {
+  height: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.makeanimheader {
+  height: 260px;
+}
+
+.settings-bottom {
+  width: 100%;
+}
+
+.settings-arrow {
+  width: 17px;
+  height: 17px;
+  transition: all 0.5s ease-in-out;
+}
+
+.arrowrotated {
+  transform: rotate(-90deg);
+}
+
+.video-container {
+  width: 300px;
+  height: 300px;
+  background-color: #000;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+@font-face {
+  font-family: sourceFont;
+  src: url(../../www/fonts/SourceSansPro-Regular.otf);
+}
+body {
+  font-family: sourceFont;
+}
+
+.app-layout {
+  background: url("../../www/images/bg.png") no-repeat center center scroll #2383c5;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.app-overflow {
+  overflow: hidden !important;
+}
+
+.app-swipe {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: calc(100% - 80px);
+}
+
+.main-container.ng-leave {
+  z-index: 9988;
+}
+
+.main-container.ng-enter {
+  z-index: 8888;
+}
+
+.page-swipe.ng-enter {
+  -webkit-animation: slideInRight 0.5s both ease-out;
+}
+
+.page-swipe.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.nomargins {
+  margin: 0;
+}
+
+.nopaddings {
+  padding: 0;
+}
+
+.layout-header {
+  background: linear-gradient(to bottom, #016699, #2383c5);
+  height: 60px;
+}
+
+.layout--top-offset {
+  margin-top: 2%;
+}
+
+.layout--big-offset {
+  margin-top: 10%;
+}
+
+.input-invalid:invalid {
+  border: 1px solid #f05a22;
+}
+
+.header-img {
+  right: 5px;
+  width: 20%;
+  top: 20px;
+  position: absolute;
+}
+
+.header-title {
+  font-size: 1.3em;
+  color: white;
+  line-height: 60px;
+}
+
+.header-img--menu-logo {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  width: 40px;
+}
+
+.title-format {
+  padding: 2% 0 3% 0;
+  text-align: -webkit-center;
+  font-size: 0.9em;
+  color: #016699;
+}
+
+form,
+.text-area {
+  width: 80%;
+}
+
+label {
+  padding-bottom: 20px;
+  display: block;
+}
+
+form input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #f4f4f4;
+  background: transparent;
+  border-radius: 0;
+  outline: none !important;
+}
+
+.input:focus {
+  -webkit-input-placeholder: #bcbec0;
+  outline: none !important;
+}
+
+select {
+  color: #999 !important;
+  border: 1px solid #f4f4f4;
+}
+
+.txt--gray {
+  color: #999;
+}
+
+.txt-placeholder--gray {
+  color: #bcbec0;
+}
+
+.btn {
+  font-size: 1.1em;
+  border-radius: 5px;
+  min-width: 25%;
+  margin: 20px 20px 0 20px;
+  border: none;
+  line-height: 1.6em;
+  color: white;
+  background: linear-gradient(to bottom, #016699, #2383c5);
+  outline: none !important;
+}
+
+.btn--long {
+  min-width: 70%;
+  margin: 2% 20%;
+}
+
+.btn--middle {
+  min-width: 50%;
+}
+
+.btn--small {
+  font-size: 0.9em;
+  min-width: 20%;
+  margin: 5px;
+}
+
+.btn-price {
+  margin-top: 10px;
+  height: 80px;
+  border-radius: 25px;
+}
+
+.btn-price span,
+.layout--block {
+  display: block;
+}
+
+.login-layout--btn {
+  width: 100%;
+}
+
+.login--form {
+  text-align: center;
+}
+
+.login--form input {
+  height: 25px;
+  width: 100% !important;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bcbec0;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.login-logo {
+  text-align: center;
+  display: block;
+  padding-bottom: 15%;
+}
+
+.layout--centered {
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.layout--left {
+  text-align: left;
+}
+
+.login-img {
+  width: 74%;
+  display: block;
+  padding: 5% 0;
+}
+
+.service-txt {
+  color: #29abe2;
+  font-size: 0.8em;
+}
+
+.service-txt--blue {
+  color: #0071bc;
+  font-size: 0.7em;
+  vertical-align: bottom;
+}
+
+.service-txt--login {
+  display: block;
+  text-align: center;
+}
+
+.service-txt--signup {
+  vertical-align: top;
+}
+
+.signup-checkbox {
+  width: auto;
+}
+
+.signup-layout--btn {
+  text-align: center;
+}
+
+.btn--bottom {
+  width: 100%;
+}
+
+.btn--plus {
+  width: 80px;
+  height: 80px;
+}
+
+.title-layout {
+  padding-top: 20px;
+}
+
+.title-orange {
+  display: block;
+  color: #f05a22;
+  font-size: 1.3em;
+}
+
+.txt-small-size {
+  font-size: 0.8em;
+}
+
+.txt-middle-size {
+  font-size: 0.9em;
+}
+
+.txt-normal-size {
+  font-size: 1em;
+}
+
+.txt-xl-size {
+  font-size: 1.4em;
+}
+
+.txt-color-light-gray {
+  color: #ccc;
+}
+
+.main-container {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.container {
+  height: calc(100% - 80px);
+}
+
+.menu-layout--header {
+  height: 60px;
+  border-bottom: 1px solid white;
+}
+
+.menu-icons {
+  display: inline-table;
+}
+
+.menu-icons-layout {
+  padding: 1%;
+  width: 18%;
+}
+
+.circle {
+  padding-left: 30px;
+}
+
+.circle::after {
+  content: "";
+  position: fixed;
+  margin-top: 3px;
+  width: 15px;
+  margin-left: -20px;
+  height: 15px;
+  background: black;
+  border-radius: 15px;
+}
+
+.circleselected::after {
+  background: #3ff900;
+}
+
+.layout-inline {
+  display: -webkit-box;
+}
+
+.toll-input {
+  width: 100%;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  letter-spacing: 0.1em;
+  height: 30px;
+  -webkit-input-placeholder: #e6e6e6;
+  outline: none !important;
+}
+
+.medial-input-short {
+  width: 70%;
+}
+
+.spacer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
+}
+
+.combo-scale {
+  font-size: 0.8em;
+}
+
+.combo-scale .circle {
+  padding-left: 25px;
+  padding-right: 5px;
+}
+
+.combo-scale .circle::after {
+  margin-top: 0;
+  margin-left: -15px;
+}
+
+.combo-left .circle {
+  padding-left: 20px;
+  padding-right: 5px;
+}
+
+.combo-left .spacer,
+.upload-form--audio-title {
+  display: block;
+}
+
+.combo-left .circle::after {
+  margin-top: 3px;
+  margin-left: -15px;
+}
+
+.video-player {
+  width: 320px;
+  height: 240px;
+}
+
+.list-vertical {
+  overflow-y: scroll;
+  height: 160px;
+}
+
+.payment-form label {
+  padding-bottom: 5px;
+}
+
+.confirmation-img {
+  width: 80%;
+  padding: 5px;
+}
+
+.call-img {
+  left: -25%;
+  height: 30px;
+  position: relative;
+}
+
+.call-btn {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 15px;
+}
+
+.input-helper-layout {
+  padding-top: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  top: 60px;
+  position: absolute;
+}
+
+.input-helper-text {
+  width: 95%;
+}
+
+.appointment-img {
+  padding: 30px 0;
+  width: 45%;
+}

@@ -1,0 +1,13 @@
+<div>
+<!--<select ng-model="selectedItem">-->
+    <!--<option ng-repeat="item in timeStampFormats" value="{{item.a}}">{{item.formatLabel}}</option>-->
+<!--</select>-->
+
+
+
+<div ng-repeat="timeStampFormatItem in timeStampFormatsList track by $index">
+    <select ng-model="selected[$index]">
+        <option ng-repeat="item in timeStampFormatItem">{{item.formatLabel}}</option>
+    </select>
+</div>
+</div>

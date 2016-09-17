@@ -7,6 +7,12 @@ angular
             controller: 'StartCtrl'
 
         });
+        $stateProvider.state('test',{
+            url:'/test',
+            templateUrl: "templates/Test.html",
+            controller: 'TestCtrl'
+
+        });
         $stateProvider.state('login',{
             url:'/login',
             templateUrl: "templates/Login.html",
